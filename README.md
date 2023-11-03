@@ -1,6 +1,8 @@
 # StickFigureBattleHalloween
 This is the code of and ICS3UP assignment.
+
 Group members: Justin Jiang, Fei Wang
+
 The task is to create an animation using multithreading and utilize overloaded constructors.
 Each group got a theme. My group's theme was halloween, so we decided to animage 2 stickmen-wizards (aka stickzards) duking it out with magic spells and whatnot.
 
