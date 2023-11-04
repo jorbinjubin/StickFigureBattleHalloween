@@ -55,6 +55,7 @@ import java.lang.*;
 	c.setFont(f4);
 	c.setColor(wht);
 	tk.fancyprint("By: Fei Wang, Justin Jiang", 200, 420, 100);
+	tk.fancyprint("Press any key to continue:", 200, 450, 100);
     }
    
     public Splash(Console con) {

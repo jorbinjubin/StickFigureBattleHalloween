@@ -10,6 +10,8 @@ public class Driver {
     public static void main(String[] args) {
 	Driver d = new Driver();
 	Background b = new Background(c);
+	Stickman1 s = new Stickman1(c);
 	b.run();
+	s.run();
     }
 }

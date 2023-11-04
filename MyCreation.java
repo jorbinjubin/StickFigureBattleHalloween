@@ -1,6 +1,17 @@
-// The "MyCreation" class.
 import hsa.Console;
 import java.awt.*;
+/*
+~~%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%~~
+  * My Creation assignment. Uses threads and loops to animate a short story about 2  
+    stick figures who are wizards and fight each other in a halloween themed setting.
+    The bubbles in the cauldron use an overloaded constructor to create bubbles of   
+    different sizes and speeds.                                                      
+										     
+  * @author Justin Jiang, Fei Wang                                                   
+  * ICS3UP                                                                           
+  * 2023/month/day                                                                   
+~~%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%~~
+  */
 
 public class MyCreation {
     static Console c; // The output console
@@ -36,16 +47,28 @@ public class MyCreation {
     //      }
     //  }
 
+    
+    public void sm1() {
+	Stickman1 h = new Stickman1(c);
+	h.start();
+    }
+    
     // creates a new window and gives window a title
     public MyCreation() {
 	c = new Console("Stick Figure Battle");
     }
+    
 
     public static void main(String[] args) {
 	MyCreation z = new MyCreation();
 	
 	z.background();
 	z.splash();
+	z.sm1();
+	
+	
+	
+	
     }
 }
 
