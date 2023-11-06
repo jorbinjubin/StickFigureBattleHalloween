@@ -36,7 +36,7 @@ public class MyCreation {
     
     public void sm1() {
         Stickman1 h = new Stickman1(c);
-        h.start();
+        h.run();
     }
     
     public void bat() {
