@@ -54,7 +54,7 @@ public class tkit {
         return slope;
     }
     
-    public void drawCircle(int startX, int startY, int radius) {
+    public static void drawCircle(int startX, int startY, int radius) {
         for(int i=-radius; i<=radius; i++) {
             c.drawLine(startX-(int)Math.sqrt(radius*radius-i*i), startY-i, startX+(int)Math.sqrt(radius*radius-i*i), startY-i);
         }
