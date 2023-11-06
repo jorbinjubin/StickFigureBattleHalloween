@@ -76,5 +76,8 @@ public class MyCreation {
         z.sm1();
         z.spider();
         z.bat();
+        c.getChar();
+        Background b = new Background(c);
+        b.bg2();
     }
 }
