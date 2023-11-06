@@ -23,19 +23,19 @@ public class Background {
         c.fillRect(0, 0, 650, 500);
         
         c.setColor(tkit.spider);
-        c.fillOval(180, 380, 400, 200);
+        tkit.drawCircle(300, 640, 300);
         c.setColor(Color.black);
-        c.drawOval(180, 380, 400, 200);
+        c.drawOval(60, 340, 450, 300);
 
         c.setColor(tkit.spider);
-        c.fillOval(-80, 390, 400, 250);
+        tkit.drawCircle(-20, 650, 300);
         c.setColor(Color.black);
-        c.drawOval(-80, 390, 400, 250);
+        c.drawOval(-200, 350, 450, 250);
         
         c.setColor(tkit.spider);
-        c.fillOval(340, 370, 500, 300);
+        tkit.drawCircle(560, 680, 350);
         c.setColor(Color.black);
-        c.drawOval(340, 370, 500, 300); 
+        c.drawOval(260, 340, 800, 480);
     }
     
     public Background(Console con) {
