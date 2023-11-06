@@ -33,28 +33,34 @@ public class tkit {
   public static Color lightOrange = new Color(224, 138, 67);
   public static Color walloutline = new Color(90, 90, 90);
   public static Color floor = new Color(120, 120, 120);
-  
+
     public static void delay(int ms) {
-	try {Thread.sleep(ms);} catch (Exception e) {}
+        try {Thread.sleep(ms);} catch (Exception e) {}
     }
 
     public static void pauseProgram() {
-	c.getChar();
+        c.getChar();
     }
 
     public static void fancyprint(String s1, int x, int y, int speed) {
-	for (int i = 0; i <= s1.length(); i++) {
-	    c.drawString(s1.substring(0, i), x, y);
-	    try{ Thread.sleep(speed);} catch(Exception e) {};
-	}
+        for (int i = 0; i <= s1.length(); i++) {
+            c.drawString(s1.substring(0, i), x, y);
+            try{ Thread.sleep(speed);} catch(Exception e) {};
+        }
     }
 
     public static double getSlope(int x1, int y1, int x2, int y2) {
-	double slope = (y2 - y1) / (x2 - x1);
-	return slope;
+        double slope = (y2 - y1) / (x2 - x1);
+        return slope;
+    }
+    
+    public void drawCircle(int startX, int startY, int radius) {
+        for(int i=-radius; i<=radius; i++) {
+            c.drawLine(startX-(int)Math.sqrt(radius*radius-i*i), startY-i, startX+(int)Math.sqrt(radius*radius-i*i), startY-i);
+        }
     }
 
     public tkit(Console con) {
-	c = con;
+        c = con;
     }
 }
