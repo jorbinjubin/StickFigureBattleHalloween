@@ -19,6 +19,9 @@ public class Background {
     }
     
     public void bg2() {
+       
+        
+        //hills
         c.setColor(tkit.orangeBg);
         c.fillRect(0, 0, 650, 500);
         
@@ -26,7 +29,13 @@ public class Background {
         tkit.drawCircle(300, 640, 300);
         c.setColor(Color.black);
         c.drawOval(60, 340, 450, 300);
-
+        
+         //tree
+        c.setColor(Color.black);
+        for(int i=0; i<60; i++) {
+            c.drawLine(50, 300, 20+i, 365);
+        }
+        
         c.setColor(tkit.spider);
         tkit.drawCircle(-20, 650, 300);
         c.setColor(Color.black);
