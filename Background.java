@@ -26,25 +26,33 @@ public class Background {
         c.fillRect(0, 0, 650, 500);
         
         c.setColor(tkit.spider);
-        tkit.drawCircle(300, 640, 300);
+        tkit.drawCircle(300, 690, 300);
         c.setColor(Color.black);
-        c.drawOval(60, 340, 450, 300);
+        c.drawOval(60, 390, 450, 300);
         
          //tree
         c.setColor(Color.black);
         for(int i=0; i<60; i++) {
-            c.drawLine(50, 300, 20+i, 365);
+            c.drawLine(50, 340, 20+i, 420);
+        }
+        for(int i=0; i<20; i++) {
+            c.drawLine(40+i, 240, 40+i, 380);
+        }
+        for(int i=0; i<10; i++) {
+            c.drawLine(50+i, 240, 65, 210);
+            c.drawLine(50-i, 240, 35, 210);
+            
         }
         
         c.setColor(tkit.spider);
-        tkit.drawCircle(-20, 650, 300);
+        tkit.drawCircle(-20, 700, 300);
         c.setColor(Color.black);
-        c.drawOval(-200, 350, 450, 250);
+        c.drawOval(-200, 400, 450, 250);
         
         c.setColor(tkit.spider);
-        tkit.drawCircle(560, 680, 350);
+        tkit.drawCircle(560, 730, 350);
         c.setColor(Color.black);
-        c.drawOval(260, 340, 800, 480);
+        c.drawOval(260, 390, 800, 480);
     }
     
     public Background(Console con) {
@@ -66,5 +74,4 @@ public class Background {
        bg1();
        moon();
     } 
-
 }
