@@ -1,5 +1,5 @@
 # StickFigureBattleHalloween
-This is the code of and ICS3UP assignment.
+This is the code of an ICS3UP assignment.
 
 Group members: Justin Jiang, Fei Wang.
 
