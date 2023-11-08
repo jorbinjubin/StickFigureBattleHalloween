@@ -19,9 +19,15 @@ public class Background {
     }
     
     public void bg2() {
-        //hills
         c.setColor(tkit.orangeBg);
         c.fillRect(0, 0, 650, 500);
+        
+        //sun
+        
+        c.setColor(tkit.moon3);
+        tkit.drawCircle(315, 270, 380);
+        c.setColor(tkit.sun); 
+        tkit.drawCircle(315, 270, 340);
         
         c.setColor(tkit.spider);
         tkit.drawCircle(300, 690, 300);
@@ -49,7 +55,7 @@ public class Background {
             c.drawLine(38, 215-i, 45, 205-i);
             
             c.drawLine(72, 310+i, 82, 306+i);
-            c.drawLine(30, 292-i, 20, 268-i);
+            c.drawLine(30, 292-i, 24, 268-i);
         }
         
         c.setColor(tkit.spider);
@@ -82,4 +88,5 @@ public class Background {
        bg1();
        moon();
     } 
+
 }
