@@ -5,7 +5,6 @@ import java.awt.*;
  * Runs the animation by creating objects and running them. Uses threads to run 
  * multiple animated objects at the same time. Bubbles use an overloaded constructor
  * to create bubbles of different sizes and speeds.
- * //Draw Circle code borrowed from Nicholas Ng with his permission.
  * 
  * @author Justin Jiang, Fei Wang
  * ICS3UP
@@ -14,7 +13,8 @@ import java.awt.*;
 
 public class MyCreation {
     static Console c; // The output console
-    public static int scene = 0;
+    public static int scene = 0; 
+
     // adds the Background thread to MyCreation
     public void background() {
         // not a thread because it's not animated!!!
@@ -23,28 +23,31 @@ public class MyCreation {
         b.moon();
     }
 
-    public void splash() {
+    public void splash() {  
         Splash s = new Splash(c);
         s.start();
-        try {
-            s.join();
-        } catch (InterruptedException e) {}
+        try{s.join();} catch (InterruptedException e){}
     }
-
+    
     public void spider() {
         Spider sp = new Spider(c);
         sp.run();
-
+        
     }
-
+    
     public void sm1() {
         Stickman1 h = new Stickman1(c);
         h.run();
     }
-
+    
     public void bat() {
         Bat b = new Bat(c);
         b.run();
+    }
+    
+    public void ghost() {
+        Ghost g = new Ghost(c);
+        g.run();
     }
     // adds the Lightning thread to MyCreation
     //  public void lightning ()
@@ -56,25 +59,33 @@ public class MyCreation {
     //
     //      //joins with SinkingBoat thread so that it only executes when
     //      lightning thread is done 
-    //      try{j.join ();}catch (InterruptedException e){}
+    //      try
+    //      {
+    //          j.join ();
+    //      }
+    //      catch (InterruptedException e)
+    //      {
+    //      }
     //  }
 
-    // creates a new window and gives window a title  
-
+    // creates a new window and gives window a title
+    
     public MyCreation() {
         c = new Console("Stick Figure Battle");
     }
 
     public static void main(String[] args) {
-        Background b = new Background(c);
         MyCreation z = new MyCreation();
+
         z.background();
-        z.splash();
+        z.sm1();
         z.spider();
         z.bat();
+        z.splash();
         c.getChar();
         scene++;
-        Background b2 = new Background(c);
-        b2.bg2();
+        Background b = new Background(c);
+        b.bg2();
     }
 }
+
