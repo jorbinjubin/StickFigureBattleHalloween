@@ -19,8 +19,6 @@ public class Background {
     }
     
     public void bg2() {
-       
-        
         //hills
         c.setColor(tkit.orangeBg);
         c.fillRect(0, 0, 650, 500);
@@ -39,9 +37,19 @@ public class Background {
             c.drawLine(40+i, 240, 40+i, 380);
         }
         for(int i=0; i<10; i++) {
-            c.drawLine(50+i, 240, 65, 210);
-            c.drawLine(50-i, 240, 35, 210);
+            c.drawLine(50+i, 240, 70, 200);
+            c.drawLine(50-i, 240, 30, 200);
             
+            c.drawLine(60, 320+i, 80, 290+i);
+            c.drawLine(40, 300+i, 20, 270+i);
+            
+        }
+        for(int i=0; i<5; i++) {    
+            c.drawLine(62, 215-i, 55, 205-i);
+            c.drawLine(38, 215-i, 45, 205-i);
+            
+            c.drawLine(72, 310+i, 82, 306+i);
+            c.drawLine(30, 292-i, 20, 268-i);
         }
         
         c.setColor(tkit.spider);
