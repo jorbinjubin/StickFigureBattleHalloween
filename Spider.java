@@ -12,59 +12,51 @@ import java.lang.*;     // to access Thread class
 public class Spider extends Thread {
     private Console c;
 
-    public void drawSpider () {
-        c.setColor(tkit.pumpkinStem);
-        int [] x = {650, 520, 480, 514, 650};
-        int [] y = {90, 70, 80, 50, 45};
-        
-        c.fillPolygon(x, y, 5);
-        
+    public void drawSpider (int x, int y) {
+        //x = 502, y=110
         for(int i=0; i<80; i++) {
             c.setColor(Color.white);
-            c.fillRect(515, 0, 4, 120);
+            c.fillRect(x+13, 0, x-498, y+10);
             
             c.setColor(tkit.spider);
             //body
-            c.fillArc(502, 110, 30, 20, 0, 180);
-            c.fillRect(502, 120, 30, 10);
-            c.fillArc(502, 115, 30, 20, 180, 180);
+            c.fillArc(x, y, 30, 20, 0, 180);
+            c.fillRect(x, y+10, 30, 10);
+            c.fillArc(x, y+6, 30, 20, 180, 180);
             //legs
-             c.drawLine(506, 130, 502, 140);
-            c.drawLine(502, 140, 500, 147);
-            c.drawLine(507, 130, 503, 140);
-            c.drawLine(503, 140, 501, 147);
+            c.drawLine(x+4, y+20, x, y+30);
+            c.drawLine(x, y+30, x-2, y+37);
+            c.drawLine(x+5, y+20, x+1, y+30);
+            c.drawLine(x+1, y+30, x-1, y+37);
             
-            c.drawLine(526, 130, 530, 140);
-            c.drawLine(530, 140, 530, 147);
-            c.drawLine(527, 130, 531, 140);
-            c.drawLine(531, 140, 531, 147);
+            c.drawLine(x+24, y+20, x+28, y+30);
+            c.drawLine(x+28, y+30, x+28, y+37);
+            c.drawLine(x+25, y+20, x+29, y+30);
+            c.drawLine(x+29, y+30, x+29, y+37);
             
-            c.drawLine(506, 115, 500, 105);
-            c.drawLine(500, 105, 510, 98);
-            c.drawLine(505, 115, 499, 105);
-            c.drawLine(499, 105, 509, 98);
+            c.drawLine(x+4, y+5, x-2, y-5);
+            c.drawLine(x-2, y-5, x+8, y-7);
+            c.drawLine(x+3, y+5, x-3, y-5);
+            c.drawLine(x-3, y-5, x+7, y-7);
             
-            c.drawLine(526, 115, 532, 105);
-            c.drawLine(532, 105, 522, 98);
-            c.drawLine(527, 114, 533, 105);
-            c.drawLine(533, 105, 523, 98);
+            c.drawLine(x+24, y+5, x+30, y-5);
+            c.drawLine(x+30, y-5, x+20, y-7);
+            c.drawLine(x+25, y+4, x+31, y-5);
+            c.drawLine(x+31, y-5, x+21, y-7);
             
-            c.drawLine(502, 118, 494, 106);
-            c.drawLine(494, 106, 506, 96);
-            c.drawLine(501, 118, 493, 106);
-            c.drawLine(493, 106, 505, 96);
+            c.drawLine(x, y+8, x-8, y-4);
+            c.drawLine(x-8, y-4, x+4, y-14);
+            c.drawLine(x-1, y+8, x-9, y-4);
+            c.drawLine(x-9, y-4, x+3, y-14);
             
-            c.drawLine(530, 118, 538, 106);
-            c.drawLine(538, 106, 526, 96);
-            c.drawLine(531, 118, 539, 106);
-            c.drawLine(539, 106, 527, 96);
+            c.drawLine(x+28, y+8, x+36, y-4);
+            c.drawLine(x+36, y-4, x+24, y-14);
+            c.drawLine(x+29, y+8, x+37, y-4);
+            c.drawLine(x+37, y-4, x+25, y-14);
             
             c.setColor(tkit.orangeBg);
-            c.fillOval(508, 120, 5, 5);
-            c.fillOval(522, 120, 5, 5);
-            
-            try {Thread.sleep(15); }
-            catch (Exception e) {}
+            c.fillOval(x+6, y+10, 5, 5);
+            c.fillOval(x+20, y+10, 5, 5);
         }
     }
 
@@ -75,6 +67,6 @@ public class Spider extends Thread {
 
 
     public void run () {
-        drawSpider();
+        drawSpider(502, 110);
     }
 }
