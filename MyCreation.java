@@ -19,6 +19,7 @@ public class MyCreation {
     public void background() {
         // not a thread because it's not animated!!!
         Background b = new Background(c);
+        if(scene==0) 
         b.bg1();
         b.moon();
     }
@@ -32,12 +33,6 @@ public class MyCreation {
     public void spider() {
         Spider sp = new Spider(c);
         sp.run();
-        
-    }
-    
-    public void sm1() {
-        Stickman1 h = new Stickman1(c);
-        h.run();
     }
     
     public void bat() {
@@ -78,14 +73,13 @@ public class MyCreation {
         MyCreation z = new MyCreation();
 
         z.background();
-        z.sm1();
-        z.spider();
         z.bat();
+        z.spider();
         z.splash();
         c.getChar();
         scene++;
         Background b = new Background(c);
         b.bg2();
+        z.ghost();
     }
 }
-
