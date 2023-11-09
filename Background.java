@@ -16,6 +16,12 @@ public class Background {
     public void bg1() {
         c.setColor(tkit.orangeBg);
         c.fillRect(0, 0, 640, 500);
+        
+        c.setColor(tkit.pumpkinStem);
+        int [] x = {650, 520, 480, 514, 650};
+        int [] y = {90, 70, 80, 50, 45};
+        
+        c.fillPolygon(x, y, 5);
     }
     
     public void bg2() {
@@ -88,5 +94,4 @@ public class Background {
        bg1();
        moon();
     } 
-
 }
