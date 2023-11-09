@@ -38,10 +38,6 @@ public class tkit {
         try {Thread.sleep(ms);} catch (Exception e) {}
     }
 
-    public static void pauseProgram() {
-        c.getChar();
-    }
-
     public static void fancyprint(String s1, int x, int y, int speed) {
         for (int i = 0; i <= s1.length(); i++) {
             c.drawString(s1.substring(0, i), x, y);
