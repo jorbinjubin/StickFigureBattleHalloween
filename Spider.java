@@ -69,6 +69,6 @@ public class Spider extends Thread {
 
 
     public void run () {
-	drawSpider(502, 110);
+	drawSpider(c, 502, 110);
     }
 }
