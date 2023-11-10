@@ -11,9 +11,11 @@ import java.lang.*;     // to access Thread class
 
 public class Bat extends Thread {
     private Console c;
-
+    private static Color bat = new Color(58, 9, 96);
+    private static Color orangeBg = new Color(232, 104, 0);
+    
     public void drawBat (int x, int y) {      
-        c.setColor(tkit.bat);
+        c.setColor(bat);
             c.fillOval(100, 60, 20, 20);
             int [] x1 = {x, x-20, x-30, x-28, x-12, x+5};
             int [] y1 = {y, y-15, y-7, y-2, y+5, y+10};
@@ -21,7 +23,7 @@ public class Bat extends Thread {
             int [] x2 = {x+15, x+40, x+50, x+48, x+32, x+15};
             int [] y2 = {y, y-15, y-7, y-2, y+5, y+10};
             c.fillPolygon(x2, y2, 6);
-            c.setColor(tkit.orangeBg);
+            c.setColor(orangeBg);
             c.fillArc(x-30, y-5, 12, 12, -10, 190);
             c.fillArc(x-20, y, 12, 12, -10, 190);
             c.fillArc(x-11, y+3, 12, 12, -10, 190);
