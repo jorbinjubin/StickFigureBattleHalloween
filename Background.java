@@ -39,7 +39,7 @@ public class Background {
         c = con;
     }   
     //method to draw a circle without using fill commands
-    public static void drawCircle(Console c, int startX, int startY, int radius) {
+    public void drawCircle(Console c, int startX, int startY, int radius) {
         for(int i=-radius; i<=radius; i++) {
             c.drawLine(startX-(int)Math.sqrt(radius*radius-i*i), startY-i, startX+(int)Math.sqrt(radius*radius-i*i), startY-i);
         }
