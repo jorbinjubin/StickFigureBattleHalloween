@@ -24,7 +24,7 @@ import java.lang.*;
     Font f3 = new Font("Times New Roman", 0, 45);
     Font f4 = new Font("Times New Roman", 1, 20);
   
-    public static void fancyprint(String s1, int x, int y, int speed) {
+    public void fancyprint(String s1, int x, int y, int speed) {
         for (int i = 0; i <= s1.length(); i++) {
             c.drawString(s1.substring(0, i), x, y);
             try{ Thread.sleep(speed);} catch(Exception e) {};
