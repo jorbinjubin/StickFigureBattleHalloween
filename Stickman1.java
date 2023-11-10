@@ -90,7 +90,7 @@ public class Stickman1 extends Thread{
         drawStickmanSilhouette(280, 80);
         for(int i = 0; i < 100; i+=2) {
            drawStickman(40 + i, 100 + i);
-           try{Thread.sleep(50)} catch(Exception E) {};   
+           try {Thread.sleep(50);} catch (Exception e) {}   
         }
     }
 }
