@@ -83,8 +83,8 @@ public class MyCreation {
 	z.background();
 	z.bat();
 	z.spider();
-	z.sm1();
 	z.splash();
+	z.sm1();
 	c.getChar();
 	scene++;
 	Background b = new Background(c);

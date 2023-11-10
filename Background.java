@@ -13,28 +13,28 @@ public class Background {
     private Console c;
     
     
-    private static Color sun = new Color(208, 66, 14); 
-    private static Color pumpkin = new Color(255, 170, 10); 
-    private static Color pumpkinEyes = new Color(255, 219, 77); 
-    private static Color pumpkinStem = new Color(112, 58, 3);
-    private static Color lightPink = new Color(252, 159, 238);
-    private static Color mouse = new Color(212, 212, 212);
-    private static Color bat = new Color(58, 9, 96);
-    private static Color spider = new Color(74, 0, 0);
-    private static Color broom = new Color(237, 197, 128);
-    private static Color broom2 = new Color(217, 167, 98);
-    private static Color wizardHat = new Color(81, 0, 242);
-    private static Color stars = new Color(252, 255, 89);
-    private static Color orangeBg = new Color(232, 104, 0);
-    private static Color tree = new Color(24, 0, 48);
-    private static Color cinderBlocks = new Color(150, 150, 150);
-    private static Color branch = new Color(54, 23, 1);
-    private static Color moon1 = new Color(102, 0, 0);
-    private static Color moon2 = new Color(150, 0, 0);
-    private static Color moon3 = new Color(184, 28, 28);
-    private static Color lightOrange = new Color(224, 138, 67);
-    private static Color walloutline = new Color(90, 90, 90);
-    private static Color floor = new Color(120, 120, 120);
+    private  Color sun = new Color(208, 66, 14); 
+    private  Color pumpkin = new Color(255, 170, 10); 
+    private  Color pumpkinEyes = new Color(255, 219, 77); 
+    private  Color pumpkinStem = new Color(112, 58, 3);
+    private  Color lightPink = new Color(252, 159, 238);
+    private  Color mouse = new Color(212, 212, 212);
+    private  Color bat = new Color(58, 9, 96);
+    private  Color spider = new Color(74, 0, 0);
+    private  Color broom = new Color(237, 197, 128);
+    private  Color broom2 = new Color(217, 167, 98);
+    private  Color wizardHat = new Color(81, 0, 242);
+    private  Color stars = new Color(252, 255, 89);
+    private  Color orangeBg = new Color(232, 104, 0);
+    private  Color tree = new Color(24, 0, 48);
+    private  Color cinderBlocks = new Color(150, 150, 150);
+    private  Color branch = new Color(54, 23, 1);
+    private  Color moon1 = new Color(102, 0, 0);
+    private  Color moon2 = new Color(150, 0, 0);
+    private  Color moon3 = new Color(184, 28, 28);
+    private  Color lightOrange = new Color(224, 138, 67);
+    private  Color walloutline = new Color(90, 90, 90);
+    private  Color floor = new Color(120, 120, 120);
     public Background(Console con) {
 	c = con;
     }   
@@ -66,12 +66,12 @@ public class Background {
 	c.setColor(moon3);
 	drawCircle(c, 315, 270, 380);
 	c.setColor(sun); 
-	drawCircle(c, 315, 270, 340);
+	// drawCircle(c, 315,0, 340);
 	
 	c.setColor(spider);
 	drawCircle(c, 300, 690, 300);
-	c.setColor(Color.black);
-	c.drawOval(60, 390, 450, 300);
+	// c.setColor(Color.black);
+	// c.drawOval(60, 390, 450, 300);
 	
 	 //tree
 	c.setColor(Color.black);
@@ -99,13 +99,13 @@ public class Background {
 	
 	c.setColor(spider);
 	drawCircle(c, -20, 700, 300);
-	c.setColor(Color.black);
-	c.drawOval(-200, 400, 450, 250);
+	// c.setColor(Color.black);
+	// c.drawOval(-200, 400, 450, 250);
 	
 	c.setColor(spider);
 	drawCircle(c, 560, 730, 350);
-	c.setColor(Color.black);
-	c.drawOval(260, 390, 800, 480);
+	// c.setColor(Color.black);
+	// c.drawOval(260, 390, 800, 480);
     }
     
     
