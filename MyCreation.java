@@ -9,6 +9,13 @@ import java.awt.*;
  * Thanks to Nicholas Ng for the drawCircle code, my math abilities are
  * nowhere good enough to figure that out. - Justin
  *
+==========    ||     ||    ||======    		||=====
+    ||        ||     ||    ||          		||
+    ||        ||=====||    ||====      		|| 
+    ||        ||     ||    ||                   ||
+    ||        ||     ||    ||======             ||======    onsole is 640 by 500 i dont wanna make the rest of the big letters lmfao
+    
+    
  * @author Justin Jiang, Fei Wang
  * ICS3UP
  * 2023/11/02
@@ -23,10 +30,16 @@ public class MyCreation {
     public void background() {
 	// not a thread because it's not animated!!!
 	Background b = new Background(c);
-	if(scene==0) { 
-	    b.bg1();
-	    b.moon();
-	}
+	if(scene==0) {
+            b.bg1();
+            b.moon();
+        }
+        else if(scene==1) {
+            b.bg2();
+        }
+        else if(scene==2) {
+            b.bg3();
+        }
     }
 
     public void splash() {  
@@ -80,6 +93,7 @@ public class MyCreation {
     
     public static void main(String[] args) {
 	MyCreation z = new MyCreation();
+<<<<<<< HEAD
 	z.background();
 	z.bat();
 	z.spider();
@@ -90,5 +104,18 @@ public class MyCreation {
 	Background b = new Background(c);
 	b.bg2();
 	z.ghost();
+=======
+	 z.background();
+        z.bat();
+        z.spider();
+        z.splash();
+        c.getChar();
+        scene++;
+        z.background();
+        z.ghost();
+        c.getChar(); 
+        scene++;
+        z.background();
+>>>>>>> bab565686c4f7008261ebe09bfc18ddd17da7f06
     }
 }
