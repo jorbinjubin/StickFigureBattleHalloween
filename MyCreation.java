@@ -6,6 +6,9 @@ import java.awt.*;
  * multiple animated objects at the same time. Bubbles use an overloaded constructor
  * to create bubbles of different sizes and speeds.
  * 
+ * Thanks to Nicholas Ng for the drawCircle code, my math abilities are
+ * nowhere good enough to figure that out. - Justin
+ *
  * @author Justin Jiang, Fei Wang
  * ICS3UP
  * 2023/11/02
@@ -18,32 +21,33 @@ public class MyCreation {
 
     // adds the Background thread to MyCreation
     public void background() {
-        // not a thread because it's not animated!!!
-        Background b = new Background(c);
-        if(scene==0) 
-        b.bg1();
-        b.moon();
+	// not a thread because it's not animated!!!
+	Background b = new Background(c);
+	if(scene==0) { 
+	    b.bg1();
+	    b.moon();
+	}
     }
 
     public void splash() {  
-        Splash s = new Splash(c);
-        s.start();
-        try{s.join();} catch (InterruptedException e){}
+	Splash s = new Splash(c);
+	s.start();
+	try{s.join();} catch (InterruptedException e){}
     }
     
     public void spider() {
-        Spider sp = new Spider(c);
-        sp.run();
+	Spider sp = new Spider(c);
+	sp.run();
     }
     
     public void bat() {
-        Bat b = new Bat(c);
-        b.run();
+	Bat b = new Bat(c);
+	b.run();
     }
     
     public void ghost() {
-        Ghost g = new Ghost(c);
-        g.run();
+	Ghost g = new Ghost(c);
+	g.run();
     }
     // adds the Lightning thread to MyCreation
     //  public void lightning ()
@@ -67,20 +71,24 @@ public class MyCreation {
     // creates a new window and gives window a title
     
     public MyCreation() {
-        c = new Console("Stick Figure Battle");
+	c = new Console("Stick Figure Battle");
     }
-
+    public void sm1() {
+	Stickman1 sm = new Stickman1(c);
+	sm.run();
+    }
+    
     public static void main(String[] args) {
-        MyCreation z = new MyCreation();
-
-        z.background();
-        z.bat();
-        z.spider();
-        z.splash();
-        c.getChar();
-        scene++;
-        Background b = new Background(c);
-        b.bg2();
-        z.ghost();
+	MyCreation z = new MyCreation();
+	z.background();
+	z.bat();
+	z.spider();
+	z.sm1();
+	z.splash();
+	c.getChar();
+	scene++;
+	Background b = new Background(c);
+	b.bg2();
+	z.ghost();
     }
 }

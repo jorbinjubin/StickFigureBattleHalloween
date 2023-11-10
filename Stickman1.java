@@ -8,90 +8,109 @@ import java.awt.*;
 */
 
 public class Stickman1 extends Thread{
-    private static Console c;
+    private Console c;
     private static Color broom = new Color(237, 197, 128);
     private static Color broom2 = new Color(217, 167, 98);
     private static Color wizardHat = new Color(81, 0, 242);
     private static Color stars = new Color(252, 255, 89);
     
     public Stickman1(Console con) {
-        c = con;
+	c = con;
     }
 
-    public static void drawStickman(int x, int y) {
-        //Stickman head
-        c.setColor(Color.black);
-        c.fillOval(x, y, 50, 50);
-        c.setColor(Color.white);
-        c.fillOval(5 + x, 5 + y, 40, 40);
-        
-        c.setColor(broom);
-        c.fillRoundRect(x - 50, y + 99, 220, 5, 4, 4);
-        int[] broomX = {x+200 - 90, x+240- 50, x+218 - 90, x+245- 50, x+218 - 90, x+245- 50, x+218 - 90, x+240- 50, x+200 - 90};
-        int[] broomY = {y+98,  y+88,  y+98, y+100, y+101, y+108, y+105, y+120, y+105};
-        c.fillPolygon(broomX, broomY, 9);
-        //Stickman body
-        
-        c.setColor(Color.black);
-        for(int i = 0; i < 5; i++) {
-            c.drawLine(x + 30 + i, y + 48, x + 60 + i, y + 100);
-        }
-        
-        //Stickman arms
-        
-        for(int i = 0; i < 5; i++) {
-            c.drawLine(x + 30 + i, y + 48, x + 30 + i, y + 80);
-            c.drawLine(x + 30 + i, y + 80, x + 10 + i, y + 100);
-        }
-        c.drawLine(x + 35, y + 80, x + 15, y + 100);
-        
-        //Stickman legs
-        for(int i = 0; i < 5; i++) {
-            c.drawLine(x+60+i, y+100, x+40+i, y+120);
-            c.drawLine(x+40+i, y+120, x+75+i, y+150); 
-        }
-        
+    public void drawStickman(int x, int y) {
+	//Stickman head
+	c.setColor(Color.black);
+	c.fillOval(x, y, 50, 50);
+	c.setColor(Color.white);
+	c.fillOval(5 + x, 5 + y, 40, 40);
+	
+	c.setColor(broom);
+	c.fillRoundRect(x - 50, y + 99, 220, 5, 4, 4);
+	int[] broomX = {x+200 - 90, x+240- 50, x+218 - 90, x+245- 50, x+218 - 90, x+245- 50, x+218 - 90, x+240- 50, x+200 - 90};
+	int[] broomY = {y+98,  y+88,  y+98, y+100, y+101, y+108, y+105, y+120, y+105};
+	c.fillPolygon(broomX, broomY, 9);
+	//Stickman body
+	
+	c.setColor(Color.black);
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x + 30 + i, y + 48, x + 60 + i, y + 100);
+	}
+	
+	//Stickman arms
+	
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x + 30 + i, y + 48, x + 30 + i, y + 80);
+	    c.drawLine(x + 30 + i, y + 80, x + 10 + i, y + 100);
+	}
+	c.drawLine(x + 35, y + 80, x + 15, y + 100);
+	
+	//Stickman legs
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x+60+i, y+100, x+40+i, y+120);
+	    c.drawLine(x+40+i, y+120, x+75+i, y+150); 
+	}
+	
+	//Stickman hat
+	c.setColor(wizardHat);
+	int[] hatX = {x - 10, x - 10,  x+10, x + 30, x + 45, x + 60, x + 60};
+	int[] hatY = {y+5,   y - 15, y-15, y - 65, y-15,   y - 15, y + 5};
+	c.fillPolygon(hatX, hatY, hatX.length);
+	c.setColor(stars);
+	c.fillOval(x + 5, y - 5, 4, 4);
+	c.fillOval(x + 17, y - 3, 4, 4);
+	c.fillOval(x + 23, y - 3, 4, 4);
+	c.fillOval(x + 20, y - 30, 4, 4);
+	c.fillOval(x + 23, y - 37, 4, 4);
+	c.fillOval(x + 23, y - 27, 4, 4);
+	c.fillOval(x + 28, y - 14, 4, 4);
+	c.fillOval(x + 23, y - 37, 4, 4);
     }
-    public static void drawStickmanSilhouette(int x, int y) {
-        
-        //Broom
-        c.setColor(Color.black);
-        c.fillRoundRect(x - 50, y + 99, 160, 5, 4, 4);
-        int[] broomX = {x+200 - 90, x+240- 50, x+218 - 90, x+245- 50, x+218 - 90, x+245- 50, x+218 - 90, x+240- 50, x+200 - 90};
-        int[] broomY = {y+98,  y+88,  y+98, y+100, y+101, y+108, y+105, y+120, y+105};
-        
-        c.fillPolygon(broomX, broomY, 9);
-        //Stickman head
-        c.setColor(Color.black);
-        c.fillOval(x, y, 50, 50);
-        c.fillOval(5 + x, 5 + y, 40, 40);
-        
-        
-        //Stickman body
-        
-        for(int i = 0; i < 5; i++) {
-            c.drawLine(x + 30 + i, y + 48, x + 60 + i, y + 100);
-        }
-        
-        //Stickman arms
-        
-        for(int i = 0; i < 5; i++) {
-            c.drawLine(x + 30 + i, y + 48, x + 30 + i, y + 80);
-            c.drawLine(x + 30 + i, y + 80, x + 10 + i, y + 100);
-        }
-        
-        //Stickman legs
-        for(int i = 0; i < 5; i++) {
-            c.drawLine(x+60+i, y+100, x+40+i, y+120);
-            c.drawLine(x+40+i, y+120, x+75+i, y+150); 
-        }
+    public void drawStickmanSilhouette(int x, int y) {
+	
+	//Broom
+	c.setColor(Color.black);
+	c.fillRoundRect(x - 50, y + 99, 160, 5, 4, 4);
+	int[] broomX = {x+200 - 90, x+240- 50, x+218 - 90, x+245- 50, x+218 - 90, x+245- 50, x+218 - 90, x+240- 50, x+200 - 90};
+	int[] broomY = {y+98,  y+88,  y+98, y+100, y+101, y+108, y+105, y+120, y+105};
+	
+	c.fillPolygon(broomX, broomY, 9);
+	//Stickman head
+	c.setColor(Color.black);
+	c.fillOval(x, y, 50, 50);
+	c.fillOval(5 + x, 5 + y, 40, 40);
+	
+	
+	//Stickman body
+	
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x + 30 + i, y + 48, x + 60 + i, y + 100);
+	}
+	
+	//Stickman arms
+	
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x + 30 + i, y + 48, x + 30 + i, y + 80);
+	    c.drawLine(x + 30 + i, y + 80, x + 10 + i, y + 100);
+	}
+	
+	//Stickman legs
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x+60+i, y+100, x+40+i, y+120);
+	    c.drawLine(x+40+i, y+120, x+75+i, y+150); 
+	}
+	//Stickman hat
+	int[] hatX = {x - 10, x - 10,  x+10, x + 30, x + 45, x + 60, x + 60};
+	int[] hatY = {y+5,   y - 15, y-15, y - 65, y-15,   y - 15, y + 5};
+	c.fillPolygon(hatX, hatY, hatX.length);
     }
+    //public void anim() {
     public void run() {
-        drawStickmanSilhouette(280, 80);
-        for(int i = 0; i < 100; i+=2) {
-           drawStickman(40 + i, 100 + i);
-           try {Thread.sleep(50);} catch (Exception e) {}   
-        }
+	drawStickmanSilhouette(280, 80);
+	for(int i = 0; i < 100; i+=2) {
+	   drawStickman(40 + i, 100 + i);
+	   try {Thread.sleep(50);} catch (Exception e) {}   
+	}
     }
 }
     
