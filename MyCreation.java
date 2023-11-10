@@ -12,8 +12,8 @@ import java.awt.*;
 ==========    ||     ||    ||======    		||=====
     ||        ||     ||    ||          		||
     ||        ||=====||    ||====      		|| 
-    ||        ||     ||    ||                  ||
-    ||        ||     ||    ||======            ||======    onsole is 640 by 500 i dont wanna make the rest of the big letters lmfao
+    ||        ||     ||    ||                   ||
+    ||        ||     ||    ||======             ||======    onsole is 640 by 500 i dont wanna make the rest of the big letters lmfao
     
     
  * @author Justin Jiang, Fei Wang
