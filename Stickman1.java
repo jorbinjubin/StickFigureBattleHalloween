@@ -8,11 +8,14 @@ import java.awt.*;
 */
 
 public class Stickman1 extends Thread{
-    private static tkit tk;
     private static Console c;
+    private static Color broom = new Color(237, 197, 128);
+    private static Color broom2 = new Color(217, 167, 98);
+    private static Color wizardHat = new Color(81, 0, 242);
+    private static Color stars = new Color(252, 255, 89);
+    
     public Stickman1(Console con) {
         c = con;
-        tk = new tkit(c);
     }
 
     public static void drawStickman(int x, int y) {
@@ -22,7 +25,7 @@ public class Stickman1 extends Thread{
         c.setColor(Color.white);
         c.fillOval(5 + x, 5 + y, 40, 40);
         
-        c.setColor(tk.broom);
+        c.setColor(broom);
         c.fillRoundRect(x - 50, y + 99, 220, 5, 4, 4);
         int[] broomX = {x+200 - 90, x+240- 50, x+218 - 90, x+245- 50, x+218 - 90, x+245- 50, x+218 - 90, x+240- 50, x+200 - 90};
         int[] broomY = {y+98,  y+88,  y+98, y+100, y+101, y+108, y+105, y+120, y+105};
@@ -87,7 +90,7 @@ public class Stickman1 extends Thread{
         drawStickmanSilhouette(280, 80);
         for(int i = 0; i < 100; i+=2) {
            drawStickman(40 + i, 100 + i);
-           tkit.delay(50);    
+           try {Thread.sleep(50);} catch (Exception e) {}   
         }
     }
 }

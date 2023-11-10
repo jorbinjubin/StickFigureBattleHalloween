@@ -11,6 +11,7 @@ import java.awt.*;
  * 2023/11/02
  */
 
+//try {Thread.sleep(ms);} catch (Exception e) {}
 public class MyCreation {
     static Console c; // The output console
     public static int scene = 0; 
