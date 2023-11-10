@@ -23,7 +23,14 @@ import java.lang.*;
     Font f2 = new Font("Bahnschrift", 1, 100);
     Font f3 = new Font("Times New Roman", 0, 45);
     Font f4 = new Font("Times New Roman", 1, 20);
-    
+  
+    public static void fancyprint(String s1, int x, int y, int speed) {
+        for (int i = 0; i <= s1.length(); i++) {
+            c.drawString(s1.substring(0, i), x, y);
+            try{ Thread.sleep(speed);} catch(Exception e) {};
+        }
+    }
+  
     public void splashText() {
         c.setColor(moon1);
         c.setFont(f2);
