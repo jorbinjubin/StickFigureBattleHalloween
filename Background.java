@@ -33,7 +33,14 @@ public class Background {
     private static Color lightOrange = new Color(224, 138, 67);
     private static Color walloutline = new Color(90, 90, 90);
     private static Color floor = new Color(120, 120, 120);
-    
+	
+    //method to draw a circle without using fill commands
+    public static void drawCircle(int startX, int startY, int radius) {
+        for(int i=-radius; i<=radius; i++) {
+            c.drawLine(startX-(int)Math.sqrt(radius*radius-i*i), startY-i, startX+(int)Math.sqrt(radius*radius-i*i), startY-i);
+        }
+    }
+	
     //class to make background
     public void bg1() {
 	c.setColor(orangeBg);
