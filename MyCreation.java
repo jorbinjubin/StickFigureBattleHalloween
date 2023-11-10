@@ -93,7 +93,6 @@ public class MyCreation {
     
     public static void main(String[] args) {
 	MyCreation z = new MyCreation();
-<<<<<<< HEAD
 	z.background();
 	z.bat();
 	z.spider();
@@ -104,7 +103,6 @@ public class MyCreation {
 	Background b = new Background(c);
 	b.bg2();
 	z.ghost();
-=======
 	 z.background();
         z.bat();
         z.spider();
@@ -116,6 +114,5 @@ public class MyCreation {
         c.getChar(); 
         scene++;
         z.background();
->>>>>>> bab565686c4f7008261ebe09bfc18ddd17da7f06
     }
 }
