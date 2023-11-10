@@ -23,10 +23,16 @@ public class MyCreation {
     public void background() {
 	// not a thread because it's not animated!!!
 	Background b = new Background(c);
-	if(scene==0) { 
-	    b.bg1();
-	    b.moon();
-	}
+	if(scene==0) {
+            b.bg1();
+            b.moon();
+        }
+        else if(scene==1) {
+            b.bg2();
+        }
+        else if(scene==2) {
+            b.bg3();
+        }
     }
 
     public void splash() {  
@@ -80,15 +86,16 @@ public class MyCreation {
     
     public static void main(String[] args) {
 	MyCreation z = new MyCreation();
-	z.background();
-	z.bat();
-	z.spider();
-	z.sm1();
-	z.splash();
-	c.getChar();
-	scene++;
-	Background b = new Background(c);
-	b.bg2();
-	z.ghost();
+	 z.background();
+        z.bat();
+        z.spider();
+        z.splash();
+        c.getChar();
+        scene++;
+        z.background();
+        z.ghost();
+        c.getChar(); 
+        scene++;
+        z.background();
     }
 }
