@@ -38,29 +38,29 @@ import java.lang.*;
         c.setFont(f1);
         c.setColor(moon2);
         c.drawString("tick", 95, 350);
-        tk.delay(100);
+        try {Thread.sleep(100);} catch (Exception e) {}
         c.setFont(f2);
         c.setColor(moon1);
         c.drawString("F", 210, 350);
         c.setFont(f1);
         c.setColor(moon2);
         c.drawString("igure", 265, 350);
-        tk.delay(100);
+        try {Thread.sleep(100);} catch (Exception e) {}
         c.setFont(f2);
         c.setColor(moon1);
         c.drawString("B", 415, 350);
         c.setFont(f1);
         c.setColor(moon2);
         c.drawString("attle", 480, 350);
-        tk.delay(100);
+        try {Thread.sleep(100);} catch (Exception e) {}
         c.setFont(f3);
         c.setColor(moon1);
-        tk.fancyprint("Halloween", 225, 400, 100);
+        fancyprint("Halloween", 225, 400, 100);
         c.setFont(f4);
         c.setColor(bat);
-        tk.fancyprint("By: Fei Wang, Justin Jiang", 210, 435, 40);
+        fancyprint("By: Fei Wang, Justin Jiang", 210, 435, 40);
         c.setColor(Color.white);
-        tk.fancyprint("Press any key to continue", 215, 465, 80);
+        fancyprint("Press any key to continue", 215, 465, 80);
     }
 
     public Splash(Console con) {
@@ -70,5 +70,4 @@ import java.lang.*;
     public void run() {
         splashText();
     }
-
 }
