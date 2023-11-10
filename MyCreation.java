@@ -9,6 +9,13 @@ import java.awt.*;
  * Thanks to Nicholas Ng for the drawCircle code, my math abilities are
  * nowhere good enough to figure that out. - Justin
  *
+==========    ||     ||    ||======    		||=====
+    ||        ||     ||    ||          		||
+    ||        ||=====||    ||====      		|| 
+    ||        ||     ||    ||                  ||
+    ||        ||     ||    ||======            ||======    onsole is 640 by 500 i dont wanna make the rest of the big letters lmfao
+    
+    
  * @author Justin Jiang, Fei Wang
  * ICS3UP
  * 2023/11/02
