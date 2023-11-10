@@ -58,14 +58,13 @@ public class Background {
 	c.fillRect(0, 0, 650, 500);
 	
 	//sun
-	
 	c.setColor(moon3);
 	tkit.drawCircle(315, 270, 380);
-	c.setColor(sum); 
-	tkit.drawCircle(315, 270, 340);
+	c.setColor(sun); 
+	drawCircle(315, 270, 340);
 	
 	c.setColor(spider);
-	tkit.drawCircle(300, 690, 300);
+	drawCircle(300, 690, 300);
 	c.setColor(Color.black);
 	c.drawOval(60, 390, 450, 300);
 	
@@ -94,12 +93,12 @@ public class Background {
 	}
 	
 	c.setColor(spider);
-	tkit.drawCircle(-20, 700, 300);
+	drawCircle(-20, 700, 300);
 	c.setColor(Color.black);
 	c.drawOval(-200, 400, 450, 250);
 	
 	c.setColor(spider);
-	tkit.drawCircle(560, 730, 350);
+	drawCircle(560, 730, 350);
 	c.setColor(Color.black);
 	c.drawOval(260, 390, 800, 480);
     }
