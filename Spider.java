@@ -11,14 +11,16 @@ import java.lang.*;     // to access Thread class
 
 public class Spider extends Thread {
     private Console c;
-
+    private static Color spider = new Color(74, 0, 0);
+    private static Color orangeBg = new Color(232, 104, 0);
+	
     public void drawSpider (Console con, int x, int y) {
 	//x = 502, y=110
 	for(int i=0; i<80; i++) {
 	    c.setColor(Color.white);
 	    c.fillRect(x+13, 0, x-498, y+10);
 	    
-	    c.setColor(tkit.spider);
+	    c.setColor(spider);
 	    //body
 	    c.fillArc(x, y, 30, 20, 0, 180);
 	    c.fillRect(x, y+10, 30, 10);
@@ -54,7 +56,7 @@ public class Spider extends Thread {
 	    c.drawLine(x+29, y+8, x+37, y-4);
 	    c.drawLine(x+37, y-4, x+25, y-14);
 	    
-	    c.setColor(tkit.orangeBg);
+	    c.setColor(orangeBg);
 	    c.fillOval(x+6, y+10, 5, 5);
 	    c.fillOval(x+20, y+10, 5, 5);
 	}
