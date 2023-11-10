@@ -12,7 +12,7 @@ public class Background {
     //Declaring the local console variable
     private Console c;
     
-     
+    
     private static Color sun = new Color(208, 66, 14); 
     private static Color pumpkin = new Color(255, 170, 10); 
     private static Color pumpkinEyes = new Color(255, 219, 77); 
@@ -39,7 +39,7 @@ public class Background {
 	c = con;
     }   
     //method to draw a circle without using fill commands
-    public static void drawCircle(Console c, int startX, int startY, int radius) {
+    public void drawCircle(Console c, int startX, int startY, int radius) {
 	for(int i=-radius; i<=radius; i++) {
 	    c.drawLine(startX-(int)Math.sqrt(radius*radius-i*i), startY-i, startX+(int)Math.sqrt(radius*radius-i*i), startY-i);
 	}

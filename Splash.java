@@ -23,9 +23,7 @@ import java.lang.*;
     Font f2 = new Font("Bahnschrift", 1, 100);
     Font f3 = new Font("Times New Roman", 0, 45);
     Font f4 = new Font("Times New Roman", 1, 20);
-    public Splash(Console con) {
-	c = con;
-    } 
+  
     public void fancyprint(String s1, int x, int y, int speed) {
 	for (int i = 0; i <= s1.length(); i++) {
 	    c.drawString(s1.substring(0, i), x, y);
@@ -65,7 +63,9 @@ import java.lang.*;
 	fancyprint("Press any key to continue", 215, 465, 80);
     }
 
-    
+    public Splash(Console con) {
+	c = con;
+    } 
 
     public void run() {
 	splashText();
