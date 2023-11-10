@@ -12,7 +12,8 @@ import java.lang.*;     // to access Thread class
 
 public class Ghost extends Thread {
     private Console c;
-
+    private static Color lightPink = new Color(252, 159, 238);
+    
     public void drawGhost (int x, int y) {
         c.setColor(Color.white);
         c.fillRect(x, y, 60, 40);
@@ -26,7 +27,7 @@ public class Ghost extends Thread {
         c.fillOval(x+40, y-2, 10, 15);
         
         //tongue
-        c.setColor(tkit.lightPink);
+        c.setColor(lightPink);
         int[] n = {x+23, x+38, x+31, x+29};
         int[] m = {y+20, y+20, y+25, y+25};
         c.fillPolygon(n, m, 4);
