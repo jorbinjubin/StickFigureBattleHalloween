@@ -17,7 +17,7 @@ public class Spider extends Thread {
     public void spiderCrawl (int x, int y, boolean original) {
         //x = 502, y=110
         c.setColor(orangeBg); 
-        c.fillRect(x+13, -110+(int)(2*y), x-498, 20);
+        c.fillRect(x+13, -102+(int)(2*y), x-498, 20);
             if(original) {
                 c.setColor(spider);
             }
