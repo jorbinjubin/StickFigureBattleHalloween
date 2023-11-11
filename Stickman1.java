@@ -264,7 +264,7 @@ public class Stickman1 extends Thread {
             dSm(2, 40 - i, 100 + i);
         }
     }
-
+    
     public void anim2() {
 
     }
@@ -272,15 +272,16 @@ public class Stickman1 extends Thread {
     //public void anim3() {
 
     //}
-
-    public void run() {
-        drawStickmanSilhouette(280, 80);
-        while (MyCreation.scene == 1) {
+    public void anim() {
+        if(MyCreation.scene == 0) {
+            drawStickmanSilhouette(280, 80);
+        }
+        if(MyCreation.scene == 1) {
             anim1();
-            MyCreation.scene = 2;
         }
-        while (MyCreation.scene == 2) {
-            anim2();
-        }
+    }
+    public void run() {
+        //drawStickmanSilhouette(280, 80);
+        anim();
     }
 }
