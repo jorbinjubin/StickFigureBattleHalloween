@@ -256,13 +256,16 @@ public class Stickman1 extends Thread {
 
     public void dSm(int scene, int x, int y) {
         drawStickman(x, y);
-        try{Thread.sleep(50);}catch(Exception e){}
+        try{Thread.sleep(75);}catch(Exception e){}
         clearSF(scene, x, y);
     }
     public void anim1() {
-        for(int i = 0; i < 100; i++) {
-            dSm(2, 40 - i, 100 + i);
+        for(int i = 0; i < 50; i++) {
+            dSm(2, 270, 100+i);
         }
+        dSm(2, 270, 150);
+        //for(int i = 0; i < 5; i++) {    
+            
     }
     
     public void anim2() {
