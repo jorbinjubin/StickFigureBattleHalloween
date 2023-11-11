@@ -14,9 +14,12 @@ public class Bat extends Thread {
     private static Color bat = new Color(58, 9, 96);
     private static Color orangeBg = new Color(232, 104, 0);
     
-    public void drawBat (int x, int y) {      
-        c.setColor(bat);
-            c.fillOval(100, 60, 20, 20);
+    public void drawBat (int x, int y, boolean original) { 
+            if(original) {
+                c.setColor(bat);
+            }
+            else {c.setColor(orangeBg); }
+            c.fillOval(x, y-5, 20, 20);
             int [] x1 = {x, x-20, x-30, x-28, x-12, x+5};
             int [] y1 = {y, y-15, y-7, y-2, y+5, y+10};
             c.fillPolygon(x1, y1, 6);
@@ -34,7 +37,10 @@ public class Bat extends Thread {
             c.fillOval(x+4, y+5, 4, 4);
             c.fillOval(x+12, y+5, 4, 4);
             
-            c.setColor(Color.black);
+            if(original) {
+                c.setColor(Color.black);
+            }
+            else {c.setColor(orangeBg); }
             c.drawLine(x, y, x-20, y-15);
             c.drawLine(x-20, y-15, x-31, y-5);
             c.drawLine(x+17, y, x+40, y-15);
@@ -43,8 +49,9 @@ public class Bat extends Thread {
             c.drawLine(x, y-1, x-20, y-16);
             c.drawLine(x-20, y-11, x-31, y-5);
             c.drawLine(x+17, y-1, x+40, y-16);
-            c.drawLine(x+40, y-11, x+51, y-5);     
-    }
+            c.drawLine(x+40, y-11, x+51, y-5);   
+            }  
+    
 
 
     public Bat (Console con){
@@ -53,6 +60,16 @@ public class Bat extends Thread {
 
 
     public void run () {
-        drawBat(100, 65);
+        int x = 100;
+        int y = 65;
+        for(double a = 0; a < 40; a += 0.1) {
+            int batX = 100 - (int)a*20; 
+            int batY = 65 + (int)(40*Math.sin(2*a));
+            drawBat(batX, batY, true);
+            try {Thread.sleep(50);} 
+            catch(Exception e) {}
+            drawBat(batX, batY, false);
+            
+        }
     }
 }
