@@ -13,21 +13,31 @@ import java.lang.*;     // to access Thread class
 public class Ghost extends Thread {
     private Console c;
     private static Color lightPink = new Color(252, 159, 238);
+    private static Color sun = new Color(208, 66, 14); 
     
-    public void drawGhost (int x, int y) {
-        c.setColor(Color.white);
+    public void drawGhost (int x, int y, boolean original) {
+        if(original) {
+            c.setColor(Color.white);
+        }
+        else { c.setColor(sun); }
         c.fillRect(x, y, 60, 40);
         c.fillArc(x, y-30, 60, 60, 0, 180);
         c.fillArc(x-1, y+30, 22, 20, 180, 180);
         c.fillArc(x+19, y+30, 22, 20, 180, 180);
         c.fillArc(x+39, y+30, 22, 20, 180, 180);
         
-        c.setColor(Color.black);
+        if(original) {
+            c.setColor(Color.black);
+        }
+        else { c.setColor(sun); }
         c.fillOval(x+12, y-2, 10, 15);
         c.fillOval(x+40, y-2, 10, 15);
         
         //tongue
-        c.setColor(lightPink);
+        if(original) {
+            c.setColor(lightPink);
+        }
+        else { c.setColor(sun); }
         int[] n = {x+23, x+38, x+31, x+29};
         int[] m = {y+20, y+20, y+25, y+25};
         c.fillPolygon(n, m, 4);
@@ -40,6 +50,13 @@ public class Ghost extends Thread {
 
 
     public void run () {
-        drawGhost(450, 150);
+         for(double g = 0; g < 10; g += 0.1) {
+            int ghostX = 400 + (int)(10*Math.sin(2*g));
+            int ghostY = 150 - (int)(g*10);
+            drawGhost(ghostX, ghostY, true);
+            try {Thread.sleep(50);} 
+            catch(Exception e) {}
+            drawGhost(ghostX, ghostY, false);
+    }
     }
 }
