@@ -49,7 +49,9 @@ public class Background {
     //class to make background
     public void bg1() {
         c.setColor(orangeBg);
-        c.fillRect(0, 0, 640, 500);
+        for(int i=0; i<500; i++) {
+            c.drawLine(0, i, 640, i);
+        }
         
         //branch
         c.setColor(pumpkinStem);
@@ -60,12 +62,16 @@ public class Background {
         
         //spider string
         c.setColor(Color.white);
-        c.fillRect(502+13, 70, 502-498, 35);
+        for(int i=0; i<35; i++) {
+            c.drawLine(502+13, 70+i, 502+13+3, 70+i);
+        }
     }
     
     public void bg2() {
         c.setColor(orangeBg);
-        c.fillRect(0, 0, 650, 500);
+        for(int i=0; i<500; i++) {
+            c.drawLine(0, i, 640, i);
+        }
         
         //sun
         c.setColor(moon3);
