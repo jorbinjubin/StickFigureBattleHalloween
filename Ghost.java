@@ -50,9 +50,9 @@ public class Ghost extends Thread {
 
 
     public void run () {
-         for(double g = 0; g < 16; g += 0.1) {
+         for(double g = 0; g < 12; g += 0.1) {
             int ghostX = 400 + (int)(10*Math.sin(2*g));
-            int ghostY = 150 - (int)(g*10);
+            int ghostY = 150 - (int)(g*20);
             drawGhost(ghostX, ghostY, true);
             try {Thread.sleep(50);} 
             catch(Exception e) {}
