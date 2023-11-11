@@ -51,11 +51,16 @@ public class Background {
         c.setColor(orangeBg);
         c.fillRect(0, 0, 640, 500);
         
+        //branch
         c.setColor(pumpkinStem);
         int [] x1 = {650, 520, 480, 514, 650};
         int [] y1 = {90, 70, 80, 50, 45};
         
         c.fillPolygon(x1, y1, 5);
+        
+        //spider string
+        c.setColor(Color.white);
+        c.fillRect(502+13, 65, 502-498, 100);
     }
     
     public void bg2() {
@@ -67,6 +72,7 @@ public class Background {
         drawCircle(c, 315, 270, 380);
         c.setColor(sun); 
         drawCircle(c, 315, 270, 340);
+        
         
         c.setColor(spider);
         drawCircle(c, 300, 690, 300);
