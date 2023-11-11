@@ -68,9 +68,7 @@ public class Bat extends Thread {
             drawBat(batX, batY, true);
             try {Thread.sleep(50);} 
             catch(Exception e) {}
-            
-            c.setColor(orangeBg);
-            c.fillRect(60-(int)(10*a), 10, 100, 120);
+            drawBat(batX, batY, false);
             
         }
     }
