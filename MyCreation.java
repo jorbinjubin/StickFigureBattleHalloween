@@ -126,22 +126,18 @@ public class MyCreation
         z.splash ();
         z.sm1 ();
         c.getChar ();
+        
         scene++;
-
-        Background b = new Background (c);
-        b.bg2 ();
-        z.ghost ();
+        c.clear();
         z.background ();
+        z.ghost ();
         z.sm1();
-        z.bat ();
-        z.spider ();
+        c.getChar ();
+        
+        scene++;
+        c.clear();
+        z.background ();
         c.getChar ();
         scene++;
-
-        z.background ();
-        z.ghost ();
-        c.getChar ();
-        scene++;
-        z.background ();
     }
 }
