@@ -60,7 +60,7 @@ public class Background {
         
         //spider string
         c.setColor(Color.white);
-        c.fillRect(502+13, 65, 502-498, 100);
+        c.fillRect(502+13, 75, 502-498, 90);
     }
     
     public void bg2() {
