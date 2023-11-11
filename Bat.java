@@ -62,8 +62,8 @@ public class Bat extends Thread {
     public void run () {
         int x = 100;
         int y = 65;
-        for(double a = 0; a < 40; a += 0.1) {
-            int batX = 100 - (int)a*20; 
+        for(double a = 0; a < 10; a += 0.1) {
+            int batX = 100 - (int)(a*10); 
             int batY = 65 + (int)(40*Math.sin(2*a));
             drawBat(batX, batY, true);
             try {Thread.sleep(50);} 
