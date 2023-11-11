@@ -30,56 +30,56 @@ public class MyCreation
     // adds the Background thread to MyCreation
     public void background ()
     {
-        // not a thread because it's not animated!!!
-        Background b = new Background (c);
-        if (scene == 0)
-        {
-            b.bg1 ();
-            b.moon ();
-        }
-        else if (scene == 1)
-        {
-            b.bg2 ();
-        }
-        else if (scene == 2)
-        {
-            b.bg3 ();
-        }
+	// not a thread because it's not animated!!!
+	Background b = new Background (c);
+	if (scene == 0)
+	{
+	    b.bg1 ();
+	    b.moon ();
+	}
+	else if (scene == 1)
+	{
+	    b.bg2 ();
+	}
+	else if (scene == 2)
+	{
+	    b.bg3 ();
+	}
     }
 
 
     public void splash ()
     {
-        Splash s = new Splash (c);
-        s.start ();
-        try
-        {
-            s.join ();
-        }
-        catch (InterruptedException e)
-        {
-        }
+	Splash s = new Splash (c);
+	s.start ();
+	try
+	{
+	    s.join ();
+	}
+	catch (InterruptedException e)
+	{
+	}
     }
 
 
     public void spider ()
     {
-        Spider sp = new Spider (c);
-        sp.run ();
+	Spider sp = new Spider (c);
+	sp.run ();
     }
 
 
     public void bat ()
     {
-        Bat b = new Bat (c);
-        b.run ();
+	Bat b = new Bat (c);
+	b.run ();
     }
 
 
     public void ghost ()
     {
-        Ghost g = new Ghost (c);
-        g.run ();
+	Ghost g = new Ghost (c);
+	g.run ();
     }
 
 
@@ -106,38 +106,38 @@ public class MyCreation
 
     public MyCreation ()
     {
-        c = new Console ("Stick Figure Battle");
+	c = new Console ("Stick Figure Battle");
     }
 
 
     public void sm1 ()
     {
-        Stickman1 sm = new Stickman1 (c);
-        sm.run ();
-    }
+	Stickman1 sm = new Stickman1 (c);
+	sm.run ();
+    } 
 
 
     public static void main (String[] args)
     {
-        MyCreation z = new MyCreation ();
-        z.background ();
-        z.bat ();
-        z.spider ();
-        z.splash ();
-        z.sm1 ();
-        c.getChar ();
-        
-        scene++;
-        c.clear();
-        z.background ();
-        z.ghost ();
-        z.sm1();
-        c.getChar ();
-        
-        scene++;
-        c.clear();
-        z.background ();
-        c.getChar ();
-        scene++;
+	MyCreation z = new MyCreation ();
+	z.background ();
+	z.bat ();
+	z.spider ();
+	z.splash ();
+	z.sm1 ();
+	c.getChar ();
+	
+	scene++;
+	c.clear();
+	z.background ();
+	z.ghost ();
+	z.sm1();
+	c.getChar ();
+	
+	scene++;
+	c.clear();
+	z.background ();
+	c.getChar ();
+	scene++;
     }
 }
