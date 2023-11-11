@@ -100,10 +100,8 @@ public class MyCreation {
 	z.sm1();
 	c.getChar();
 	scene++;
-	Background b = new Background(c);
-	b.bg2();
+	z.background();
 	z.ghost();
-	 z.background();
         z.bat();
         z.spider();
         z.splash();
