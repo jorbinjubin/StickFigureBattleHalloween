@@ -74,11 +74,11 @@ public class MyCreation
         if(scene == 0) {
             int x = 100;
             int y = 65;
-            for(double a = 0; a < 10; a += 0.01) {
-                int batX = 100 - (int)(a10);
+            for(double a = 0; a < 10; a += 0.1) {
+                int batX = 100 - (int)(a*10);
                 int batY = 65 + (int)(40*Math.sin(2*a));
                 b.drawBat(batX, batY, true, 0);
-                try {Threat.sleep(50); }
+                try {Thread.sleep(50); }
                 catch(Exception e) {}
                 b.drawBat(batX, batY, false, 0);
             }
