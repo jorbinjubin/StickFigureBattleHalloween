@@ -45,8 +45,12 @@ public class MyCreation
             b.bg3 ();
         }
     }
-
-
+    
+    public void bubbles() {
+        Bubbles bub = new Bubbles(c);
+        bub.start();
+    }
+    
     public void splash ()
     {
         Splash s = new Splash (c);
@@ -76,7 +80,7 @@ public class MyCreation
             int y = 65;
             for(double a = 0; a < 10; a += 0.1) {
                 int batX = 100 - (int)(a*10);
-                int batY = 65 + (int)(40*Math.sin(2*a));
+                int batY = 65 + (int)(32*Math.sin(2*a));
                 b.drawBat(batX, batY, true, 0);
                 try {Thread.sleep(50); }
                 catch(Exception e) {}
@@ -171,8 +175,7 @@ public class MyCreation
         scene++;
         c.clear();
         z.background ();
+        z.bubbles();
         z.bat();
-        c.getChar ();
-        scene++;  
     }
 }
