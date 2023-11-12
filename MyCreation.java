@@ -171,7 +171,8 @@ public class MyCreation
         scene++;
         c.clear();
         z.background ();
+        z.bat();
         c.getChar ();
-        scene++;
+        scene++;  
     }
 }
