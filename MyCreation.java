@@ -70,6 +70,42 @@ public class MyCreation
 
     public void bat ()
     {
+    if(scene == 0) {
+        int x = 100;
+        int y = 65;
+        for(double a = 0; a < 10; a += 0.01) {
+            int batX = 100 - (int)(a10);
+            int batY = 65 + (int)(40Math.sin(2*a));
+            b.drawBat(batX, batY, true, 0);
+            try {Threat.sleep(50); }
+            catch(Exception e) {}
+            b.drawBat(batX, batY, false, 0);
+        }
+        
+    else if(scene == 2) {
+        int x = 100;
+        int y = 40; 
+        for(double a = 0; a < 9; a += 0.2) {
+            int bat1X = 100 - (int)(a*20);
+            int bat1Y = 60 + (int)(30*Math.sin(2*a)); 
+
+            int bat2X = 120 - (int)(a*20);
+            int bat2Y = 45 + (int)(30*Math.sin(2*a)); 
+
+            int bat3X = 150 - (int)(a*20);
+            int bat3Y = 52 + (int)(30*Math.sin(2*a)); 
+            
+            b.drawBat(bat1X, bat1Y, true, 2);
+            b.drawBat(bat3X, bat3Y, true, 2);
+            b.drawBat(bat2X, bat2Y, true, 2);
+            try {Thread.sleep(50;)
+            catch(Exception e) {}
+            b.drawBat(bat1X, bat1Y, false, 2);
+            b.drawBat(bat3X, bat3Y, false, 2);
+            b.drawBat(bat2X, bat2Y, false, 2);
+        }
+    }
+}
         Bat b = new Bat (c);
         b.run ();
     }
