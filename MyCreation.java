@@ -87,13 +87,13 @@ public class MyCreation
             int x = 100;
             int y = 40; 
             for(double a = 0; a < 9; a += 0.2) {
-                int bat1X = 100 - (int)(a*20);
+                int bat1X = 110 - (int)(a*20);
                 int bat1Y = 60 + (int)(30*Math.sin(2*a)); 
 
-                int bat2X = 120 - (int)(a*20);
+                int bat2X = 130 - (int)(a*20);
                 int bat2Y = 45 + (int)(30*Math.sin(2*a)); 
 
-                int bat3X = 150 - (int)(a*20);
+                int bat3X = 160 - (int)(a*20);
                 int bat3Y = 52 + (int)(30*Math.sin(2*a)); 
             
                 b.drawBat(bat1X, bat1Y, true, 2);
