@@ -125,10 +125,10 @@ public class Spider extends Thread {
             spiderCrawl(502, 110-y, false);
         }
         
-        for(int n = 0; n<50; n++) {
-            drawSpider(502+(6*n), 90+(n/2), true);
+        for(int n = 0; n<42; n++) {
+            drawSpider(502+(6*n), 92+(n/2), true);
             try {Thread.sleep(50);} catch (Exception e) {}
-            drawSpider(502+(6*n), 90+(n/2), false);
+            drawSpider(502+(6*n), 92+(n/2), false);
         }
     }
 }
