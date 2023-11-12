@@ -35,6 +35,9 @@ public class Background {
     private static Color floor = new Color(120, 120, 120);
     private static Color darkBrown = new Color(38, 13, 10);
     private static Color lightBrown = new Color(66, 29, 25);
+    private static Color leaf = new Color(16, 97, 0);
+    private static Color potion = new Color(147, 4, 224);
+    private static Color cauldron = new Color(141, 130, 176);
     
     public Background(Console con) {
         c = con;
@@ -82,8 +85,6 @@ public class Background {
         
         c.setColor(spider);
         drawCircle(c, 300, 690, 300);
-        c.setColor(Color.black);
-        c.drawOval(60, 390, 450, 300);
         
          //tree
         c.setColor(Color.black);
@@ -111,13 +112,9 @@ public class Background {
         
         c.setColor(spider);
         drawCircle(c, -20, 700, 300);
-        c.setColor(Color.black);
-        c.drawOval(-200, 400, 450, 250);
         
         c.setColor(spider);
         drawCircle(c, 560, 730, 350);
-        c.setColor(Color.black);
-        c.drawOval(260, 390, 800, 480);
     }
     
     public void bg3() {
@@ -134,6 +131,7 @@ public class Background {
             c.drawLine(0, i, 640, i);
         }
         
+        //jagged outline layer between dark and light brown
         for(int x = 0; x<20; x++) {
             int[] x2 = {x, 40-x, x};
             int[] y2 = {200-x, 120-x, 120-x};
@@ -182,15 +180,80 @@ public class Background {
             int[] y3 = {120+x, 120+x, 170-x};
             c.drawPolygon(x3, y3, 3);
         }
-         
+
+        //spiderweb 
+        c.setColor(Color.WHITE);
+        
+        c.drawLine(635, 5, 560, 5);
+        c.drawLine(635, 5, 583, 33);
+        c.drawLine(635, 5, 608, 65);
+        c.drawLine(635, 5, 635, 90);
+        
+        c.setColor(pumpkin);
+        drawCircle(c, 50, 450, 30);
+        drawCircle(c, 80, 450, 30);
+        
+        c.setColor(pumpkinStem);
+        for(int x = 405; x<430; x++) {
+            c.drawLine(61, x, 69, x);
+        }
+        
+        c.setColor(pumpkinEyes); 
+        for(int e = 0; e<3; e++) {
+            int[] x = {45, 50-e, 40+e};
+            int[] y = {445+e, 450-e, 450-e};
+            c.drawPolygon(x, y, 3);
+        }
+        
+        for(int e = 0; e<3; e++) {
+            int[] x = {85, 90-e, 80+e};
+            int[] y = {445+e, 450-e, 450-e};
+            c.drawPolygon(x, y, 3);
+        }
+        
+        for(int m = 0; m < 5; m++) {
+            int[] x = {55+m, 75-m, 65};
+            int[] y = {458+m, 458+m, 465-m};
+            c.drawPolygon(x, y, 3);
+        }
+        
+        c.setColor(leaf);
+        for(int l = 0; l < 8; l++) {
+            int[] x = {70+(int)(l/2), 77, 88-l, 81-l};
+            int[] y = {430-l, 412+l, 408+l, 424+l};
+            c.drawPolygon(x, y, 4);
+        }
+        
+        //cauldron 
+        c.setColor(cauldron);
+        for(int  u= 0; u<20; u++) {
+            c.drawLine(280, 340+u, 460, 340+u);
+        }
+
+        for(int u = 0; u<20; u++) {
+            c.drawLine(310, 360+u, 430, 360+u);
+        }
+        
+        for(int m = 0; m<110; m++) {
+            c.drawLine(280, 380+m, 460, 380+m);
+        }
+        
+        for(int i = 0; i < 10; i++) {
+            c.drawLine(280, 350+i, 310, 355+i);
+            c.drawLine(460, 350+i, 430, 355+i);
+            
+            c.drawLine(310, 375+i, 280, 380+i);
+            c.drawLine(430, 375+i, 460, 380+i);
+        }
+        
     }
     
     
     public void moon() {
         for (int i = 0; i < 123; i++) {
-            int red = (int) (102+ (i / 122.0) * 80.0);
-            int green = (int) ((i / 122.0) * 28.0);
-            int blue = (int) ((i / 122.0) * 28.0);
+            int red = (int) (102+ (i/122.0)*80.0);
+            int green = (int) ((i/122.0)*28.0);
+            int blue = (int) ((i/122.0)*28.0);
             Color moonColor = new Color(red, green, blue);
             c.setColor(moonColor);
             c.drawOval(325 - i, 140 - i, 2*i, 2*i);
