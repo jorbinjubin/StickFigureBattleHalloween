@@ -20,8 +20,12 @@ public class Bubbles extends Thread {
     int bubble4X, bubble4Size;
     int bubble5X, bubble5Size;
     
-    int bubble1Y, bubble2Y, bubble3Y, bubble4Y, bubble5Y = 310;
-
+    int bubble1Y = 310; 
+    int bubble2Y = 310;
+    int bubble3Y = 310;
+    int bubble4Y = 310;
+    int bubble5Y = 310;
+    
     public void generateBubbles() {
         bubble1X = (int)(Math.random()*140+280);
         bubble1Size = (int)(Math.random()*12+8);
@@ -36,49 +40,50 @@ public class Bubbles extends Thread {
     }
 
     public void drawBubbles() {
-        c.setColor(potion);
-        c.fillOval(bubble1X, bubble1Y, bubble1Size, bubble1Size);
-        c.fillOval(bubble2X, bubble2Y, bubble2Size, bubble2Size);
-        c.fillOval(bubble3X, bubble3Y, bubble3Size, bubble3Size);
-        c.fillOval(bubble4X, bubble4Y, bubble4Size, bubble4Size);
-        c.fillOval(bubble5X, bubble5Y, bubble5Size, bubble5Size);
-        
-        try {Thread.sleep(60);} catch (Exception e) {}
-        c.setColor(lightBrown);
-        c.fillOval(bubble1X, bubble1Y, bubble1Size, bubble1Size);
-        c.fillOval(bubble2X, bubble2Y, bubble2Size, bubble2Size);
-        c.fillOval(bubble3X, bubble3Y, bubble3Size, bubble3Size);
-        c.fillOval(bubble4X, bubble4Y, bubble4Size, bubble4Size);
-        c.fillOval(bubble5X, bubble5Y, bubble5Size, bubble5Size);
-        
-        if (bubble1Y >= 100) {
-            bubble1Y -= 3;
-            bubble2Y -= 3;
-            bubble3Y -= 3;
-            bubble4Y -= 3;
-            bubble5Y -= 3;
+        for(int y = 0; y<70; y++) {
+            c.setColor(potion);
+            bubble1Y -= 3; 
+            bubble2Y -= 3; 
+            bubble3Y -= 3; 
+            bubble4Y -= 3; 
+            bubble5Y -= 3; 
             
-            drawBubbles();
-        }
+            c.fillOval(bubble1X, bubble1Y, bubble1Size, bubble1Size);
+            c.fillOval(bubble2X, bubble2Y, bubble2Size, bubble2Size);
+            c.fillOval(bubble3X, bubble3Y, bubble3Size, bubble3Size);
+            c.fillOval(bubble4X, bubble4Y, bubble4Size, bubble4Size);
+            c.fillOval(bubble5X, bubble5Y, bubble5Size, bubble5Size);
         
-        else {      
-            //regenerates them
-            generateBubbles();
-            bubble1Y = 310;
-            bubble2Y = 310; 
-            bubble3Y = 310; 
-            bubble4Y = 310; 
-            bubble5Y = 310;
-            
-            try {Thread.sleep(2000);} catch (Exception e) {}
-            
-            drawBubbles();
+            try {Thread.sleep(60);} catch (Exception e) {}
+        
+            c.setColor(lightBrown);
+            c.fillOval(bubble1X, bubble1Y, bubble1Size, bubble1Size);
+            c.fillOval(bubble2X, bubble2Y, bubble2Size, bubble2Size);
+            c.fillOval(bubble3X, bubble3Y, bubble3Size, bubble3Size);
+            c.fillOval(bubble4X, bubble4Y, bubble4Size, bubble4Size);
+            c.fillOval(bubble5X, bubble5Y, bubble5Size, bubble5Size);
         }
     }
     
     public Bubbles(Console con) {
         c = con;
+    }
+    
+    public void run () {
         generateBubbles();
         drawBubbles();
+        for(int s = 0; s<100; s++) {
+            if(bubble1Y <= 110) {
+                generateBubbles();
+                bubble1Y = 310;
+                bubble2Y = 310; 
+                bubble3Y = 310; 
+                bubble4Y = 310; 
+                bubble5Y = 310;
+                try {Thread.sleep(2000);} catch (Exception e) {} 
+                drawBubbles();
+                s++;
+            }
+        }
     }
 }
