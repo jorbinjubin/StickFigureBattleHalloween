@@ -25,6 +25,7 @@ public class MyCreation
 {
     static Console c; // The output console
     public static int scene = 0;
+    private Color potion = new Color(147, 4, 224);
 
     // adds the Background thread to MyCreation
     public void background ()
@@ -46,31 +47,21 @@ public class MyCreation
         }
     }
     
-    public void bubbles() {
-        Bubbles bub = new Bubbles(c);
-        bub.start();
+    public void ghost ()
+    {
+        Ghost g = new Ghost (c);
+        g.run ();
     }
     
     public void splash ()
     {
         Splash s = new Splash (c);
         s.start ();
-        try
-        {
+        try {    
             s.join ();
         }
-        catch (InterruptedException e)
-        {
-        }
+        catch (InterruptedException e) {}
     }
-
-
-    public void spider ()
-    {
-        Spider sp = new Spider (c);
-        sp.run ();
-    }
-
 
     public void bat ()
     {
@@ -86,8 +77,11 @@ public class MyCreation
                 catch(Exception e) {}
                 b.drawBat(batX, batY, false, 0);
             }
+            b.run();
         }  
-        else if(scene == 2) {
+        
+        Bat b2 = new Bat(c, potion);
+        if(scene == 2) {
             int x = 100;
             int y = 40; 
             for(double a = 0; a < 9; a += 0.2) {
@@ -100,47 +94,55 @@ public class MyCreation
                 int bat3X = 160 - (int)(a*20);
                 int bat3Y = 52 + (int)(20*Math.sin(2*a)); 
             
-                b.drawBat(bat1X, bat1Y, true, 2);
-                b.drawBat(bat3X, bat3Y, true, 2);
-                b.drawBat(bat2X, bat2Y, true, 2);
+                b2.drawBat(bat1X, bat1Y, true, 2);
+                b2.drawBat(bat3X, bat3Y, true, 2);
+                b2.drawBat(bat2X, bat2Y, true, 2);
                 try {Thread.sleep(50); }
                 catch(Exception e) {}
-                b.drawBat(bat1X, bat1Y, false, 2);
-                b.drawBat(bat3X, bat3Y, false, 2);
-                b.drawBat(bat2X, bat2Y, false, 2);
+                b2.drawBat(bat1X, bat1Y, false, 2);
+                b2.drawBat(bat3X, bat3Y, false, 2);
+                b2.drawBat(bat2X, bat2Y, false, 2);
             }
+            b2.start();
+            try {b2.join();}
+            catch (InterruptedException e){}
         } 
-        b.run ();
+
     }
-
-
-    public void ghost ()
+    
+    public void spider ()
     {
-        Ghost g = new Ghost (c);
-        g.run ();
+        Spider sp = new Spider (c);
+        if(scene == 0) {
+            for(int y = 0; y<25; y++) {
+                sp.spiderCrawl(502, 110-y, true, 0);
+                try {Thread.sleep(50);} catch (Exception e) {}
+                sp.spiderCrawl(502, 110-y, false, 0);
+            }
+        
+            for(int n = 0; n<42; n++) {
+                sp.drawSpider(502+(6*n), 92+(n/2), true);
+                try {Thread.sleep(50);} catch (Exception e) {}
+                sp.drawSpider(502+(6*n), 92+(n/2), false);
+            }
+        }
+        else if(scene == 2) {
+            for(int y = 0; y<25; y++) {
+                sp.spiderCrawl(582, 60-y, true, 2);
+                try {Thread.sleep(50);} catch (Exception e) {}
+                sp.spiderCrawl(582, 60-y, false, 2);
+            }
+            sp.spiderCrawl(582, 60-25, true, 2);
+        }
+        sp.start();
+        try {sp.join();}
+        catch (InterruptedException e){}
     }
 
-
-    // adds the Lightning thread to MyCreation
-    //  public void lightning ()
-    //  {
-    //      //creates the thread
-    //      Lightning j = new Lightning (c);
-    //      //starts the thread
-    //      j.start ();
-    //
-    //      //joins with SinkingBoat thread so that it only executes when
-    //      lightning thread is done
-    //      try
-    //      {
-    //          j.join ();
-    //      }
-    //      catch (InterruptedException e)
-    //      {
-    //      }
-    //  }
-
-    // creates a new window and gives window a title
+    public void bubbles() {
+        Bubbles bub = new Bubbles(c);
+        bub.start();   
+    }
 
     public MyCreation ()
     {
@@ -177,5 +179,7 @@ public class MyCreation
         z.background ();
         z.bubbles();
         z.bat();
+        z.spider();
+        
     }
 }
