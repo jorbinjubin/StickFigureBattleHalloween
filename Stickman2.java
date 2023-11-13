@@ -26,7 +26,7 @@ public class Stickman2 implements Runnable {
         c.setColor(Color.white);
         c.fillOval(5 + x, 5 + y, 40, 40);
 
-        c.setColor(new Color(84, 5, 7));
+        c.setColor(broom);
         c.fillRoundRect(x - 50, y + 99, 220, 5, 4, 4);
         int[] broomX = {x + 200 - 90, x + 240 - 50, x + 218 - 90, x + 245 - 50,
             x + 218 - 90, x + 245 - 50, x + 218 - 90, x + 240 - 50,
@@ -179,11 +179,7 @@ public class Stickman2 implements Runnable {
         c.fillOval(x - 45, 5 + y, 40, 40);
 
         c.fillRoundRect(x - 150, y + 99, 220, 5, 4, 4);
-        int[] broomX = {x - 200 + 90, x - 240 + 50, x - 218 + 90, x - 245 + 50,
-            x - 218 + 90, x - 245 + 50, x - 218 + 90, x - 240 + 50,
-            x - 200 + 90};
-        int[] broomY = {y + 98, y + 88, y + 98, y + 100, y + 101, y + 108,
-            y + 105, y + 120, y + 105};
+        c.fillRect(x-200, y+80, 100, 50);
 
         // Stickman body
         for (int i = 0; i < 5; i++) {
@@ -219,15 +215,28 @@ public class Stickman2 implements Runnable {
         }
         clearSF(scene, x, y);
     }
-    public void anim1() {
+    public void dSm(int scene, int x, int y, boolean a) {
+        drawStickmanBackwards(x, y);
         try {
-            Thread.sleep(9500);
+            Thread.sleep(30);
         } catch (Exception e) {
         }
-        for (int i = 0; i < 175; i++) {
-            dSm(2, 270+i, -150 + 2*i);
+        clearSF(scene, x, y, true);
+    }
+    public void anim1() {
+        try {
+            Thread.sleep(10000);
+        } catch (Exception e) {
         }
-        drawStickman(320, 150);
+        for (int i = 0; i < 50; i++) {
+            dSm(2, 350, -150 + 2*i, true);//end pos 350, -50
+        }
+        for(int i = 0; i < 250; i++) {
+            dSm(2, 350 + i, -50 + i, true);//end pos 500, 200
+        }
+        drawStickman(450, 200);
+        c.drawString("1v1 me nerd", 550, 150);
+        
     }
 
     public void anim2() {}
