@@ -163,6 +163,7 @@ public class Stickman1 extends Thread {
         c.fillPolygon(hatX, hatY, hatX.length);
     }
 
+    
     // Redraws the stickman with the color of the background to clear it out
     public void clearSF(int scene, int x, int y) {
         if (scene == 2) {
@@ -207,6 +208,9 @@ public class Stickman1 extends Thread {
         c.fillPolygon(hatX, hatY, hatX.length);
     }
     
+    
+    
+    
     //clears the stickman off the screen, overloaded method
     public void clearSF(int scene, int x, int y, boolean a) {
         if (scene == 2) {
@@ -223,7 +227,7 @@ public class Stickman1 extends Thread {
             x - 200 + 90};
         int[] broomY = {y + 98, y + 88, y + 98, y + 100, y + 101, y + 108,
             y + 105, y + 120, y + 105};
-            
+        c.drawPolygon(broomX, broomY, broomX.length);
             
         // Stickman body
         for (int i = 0; i < 5; i++) {
