@@ -123,6 +123,11 @@ public class Spider extends Thread {
     public Spider (Console con){
         c = con;
     }
+    
+    public Spider (Console con, Color color){
+        c = con;
+        spider = color;
+    }
 
 
     public void run () {
