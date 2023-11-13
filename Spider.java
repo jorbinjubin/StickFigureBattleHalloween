@@ -12,16 +12,21 @@ import java.lang.*;     // to access Thread class
 public class Spider extends Thread {
     private Console c;
     private static Color spider = new Color(74, 0, 0);
-    private static Color orangeBg = new Color(232, 104, 0);    
+    private static Color orangeBg = new Color(232, 104, 0); 
+    private static Color darkBrown = new Color(38, 13, 10);   
 
-    public void spiderCrawl (int x, int y, boolean original) {
+    public void spiderCrawl (int x, int y, boolean original, int scene) {
         //x = 502, y=110
-        c.setColor(orangeBg); 
-        c.fillRect(x+13, -102+(int)(2*y), x-498, 20);
+            if (scene == 0) {
+                c.setColor(orangeBg); 
+                c.fillRect(x+13, -102+(int)(2*y), x-498, 20);
+            }
+         
             if(original) {
                 c.setColor(spider);
             }
-            else {c.setColor(orangeBg); }
+            else if(scene == 0){c.setColor(orangeBg); }
+            else if (scene == 2) {c.setColor(darkBrown); }
             
             //body
             c.fillArc(x, y, 30, 20, 0, 180);
@@ -59,7 +64,10 @@ public class Spider extends Thread {
             c.drawLine(x+29, y+8, x+37, y-4);
             c.drawLine(x+37, y-4, x+25, y-14);
             
-            c.setColor(orangeBg);
+            if(original) {
+                c.setColor(orangeBg);
+            }
+            else if(scene == 2) { c.setColor(darkBrown); }
             c.fillOval(x+6, y+10, 5, 5);
             c.fillOval(x+20, y+10, 5, 5);
     }
@@ -70,7 +78,6 @@ public class Spider extends Thread {
                 c.setColor(spider);
             }
             else {c.setColor(orangeBg); }
-            
             //body
             c.fillArc(x, y, 30, 20, 0, 180);
             c.fillRect(x, y+10, 30, 10);
@@ -119,16 +126,6 @@ public class Spider extends Thread {
 
 
     public void run () {
-        for(int y = 0; y<25; y++) {
-            spiderCrawl(502, 110-y, true);
-            try {Thread.sleep(50);} catch (Exception e) {}
-            spiderCrawl(502, 110-y, false);
-        }
         
-        for(int n = 0; n<42; n++) {
-            drawSpider(502+(6*n), 92+(n/2), true);
-            try {Thread.sleep(50);} catch (Exception e) {}
-            drawSpider(502+(6*n), 92+(n/2), false);
-        }
     }
 }
