@@ -193,11 +193,16 @@ public class Background {
         
         c.drawLine(635, 5, 560, 5);
         c.drawLine(635, 5, 583, 33);
-        c.drawLine(635, 5, 608, 65);
+        c.drawLine(635, 5, 606, 66);
         c.drawLine(635, 5, 635, 90);
         
         c.drawArc(500, 6, 135, 130, 0, 90);
         c.drawArc(605, 5, 30, 30, 0, 90);
+        
+        c.setColor(Color.white);
+        for(int i=0; i<35; i++) {
+            c.drawLine(580+10, 30+i, 580+10+1, 30+i);
+        }
         
         c.setColor(pumpkin);
         drawCircle(c, 50, 450, 30);
