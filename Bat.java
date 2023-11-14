@@ -11,9 +11,10 @@ import java.lang.*;     // to access Thread class
 
 public class Bat extends Thread {
     private Console c;
-    private static Color bat = new Color(58, 9, 96);
-    private static Color orangeBg = new Color(232, 104, 0);
-    private static Color darkBrown = new Color(38, 13, 10);
+    private Color bat = new Color(58, 9, 96);
+    private Color orangeBg = new Color(232, 104, 0);
+    private Color darkBrown = new Color(38, 13, 10);
+    private Color wingColor; 
     
     public void drawBat (int x, int y, boolean original, int scene) { 
 	    if(original) {
@@ -29,8 +30,10 @@ public class Bat extends Thread {
 	    int [] y2 = {y, y-15, y-7, y-2, y+5, y+10};
 	    c.fillPolygon(x2, y2, 6);
 
-	    if(scene==0) {c.setColor(orangeBg); }
-	    if(scene==2) {c.setColor(darkBrown); }
+	    if(original && scene==0) {c.setColor(wingColor); }
+	    else if(original && scene==2) {c.setColor(wingColor); }
+	    else if(!original && scene==0) {c.setColor(orangeBg); }
+	    else if(!original && scene==2) {c.setColor(darkBrown); }
 	    c.fillArc(x-30, y-5, 12, 12, -10, 190);
 	    c.fillArc(x-20, y, 12, 12, -10, 190);
 	    c.fillArc(x-11, y+3, 12, 12, -10, 190);
@@ -58,14 +61,17 @@ public class Bat extends Thread {
 	    c.drawLine(x-20, y-11, x-31, y-5);
 	    c.drawLine(x+17, y-1, x+40, y-16);
 	    c.drawLine(x+40, y-11, x+51, y-5);   
-	    }  
-    
-
+    } 
 
     public Bat (Console con){
 	c = con;
+	wingColor = orangeBg; 
+    } 
+    
+    public Bat (Console con, Color wings){
+	c = con;
+	wingColor = wings;
     }
-
 
     public void run () {
     }
