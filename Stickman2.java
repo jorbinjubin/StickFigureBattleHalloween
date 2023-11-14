@@ -14,6 +14,7 @@ public class Stickman2 implements Runnable {
     private Color broom2 = new Color(217, 167, 98);
     private Color wizardHat = new Color(81, 7, 5);
     private Color stars = new Color(252, 255, 89);
+    private Color lightBrown = new Color(66, 29, 25);
 
     public Stickman2(Console con) {
 	c = con;
@@ -379,16 +380,36 @@ public class Stickman2 implements Runnable {
     }
     //second animation phase
     public void anim2() {
-	try {Thread.sleep(9000);
+	try {Thread.sleep(1000);
 	} catch (Exception e) {
 	}
 	for(int i = 0; i < 80; i++) {
 	    drawLoop(-20 + i * 3, 249);
-	    try {Thread.sleep(50);
+	    try {Thread.sleep(10);
 	    } catch (Exception e) {
 	    }
 	}
 	drawWalking(220, 249);
+	
+	c.setColor(Color.yellow);
+	c.drawString("This probably belongs to someone else.", 230, 240);
+	try {Thread.sleep(1500);}catch(Exception e){}
+	c.setColor(lightBrown);
+	c.fillRect(226, 230, 200, 40);
+	try {Thread.sleep(2000);}catch(Exception e){}
+	
+	c.setColor(Color.yellow);
+	c.drawString("I wouldn't touch that if I were you.", 230, 240);
+	try {Thread.sleep(1500);}catch(Exception e){}
+	c.setColor(lightBrown);
+	c.fillRect(226, 230, 200, 40);
+	try {Thread.sleep(2000);}catch(Exception e){}
+	
+	c.setColor(Color.yellow);
+	c.drawString(":)", 230, 240);
+	try {Thread.sleep(1500);}catch(Exception e){}
+	c.setColor(lightBrown);
+	c.fillRect(226, 230, 40, 40);        
     }
     //stickman 2
     public void anim() {

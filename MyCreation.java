@@ -152,15 +152,15 @@ public class MyCreation
 	sm1 ();
 	bat ();
 	spider ();
-	c.getChar ();
-	scene++;
+	c.getChar(); 
 	
+	scene++;
 	c.clear();
 	background ();
 	ghost ();
 	sm1();
 	sm2();
-	c.getChar ();
+	c.getChar(); 
 	
 	scene++;
 	c.clear();

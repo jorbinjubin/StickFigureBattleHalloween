@@ -14,6 +14,7 @@ public class Stickman1 extends Thread {
     private Color broom2 = new Color(217, 167, 98);
     private Color wizardHat = new Color(81, 0, 242);
     private Color stars = new Color(252, 255, 89);
+    private Color lightBrown = new Color(66, 29, 25);
 
     public Stickman1(Console con) {
 	c = con;
@@ -482,6 +483,28 @@ public class Stickman1 extends Thread {
 	    }
 	}
 	drawWalking(660-42*3, 249);
+	
+	try {Thread.sleep(9500);}catch(Exception e){}
+	
+	c.setColor(stars);
+	c.drawString("What is this big cauldron of purple goo?", 280, 230);
+	try {Thread.sleep(1500);}catch(Exception e){}
+	c.setColor(lightBrown);
+	c.fillRect(279, 200, 195, 60);
+	try {Thread.sleep(2000);}catch(Exception e){}
+	
+	c.setColor(stars);
+	c.drawString("Hm... What if we took some with us.", 280, 230);
+	try {Thread.sleep(1500);}catch(Exception e){}
+	c.setColor(lightBrown);
+	c.fillRect(279, 200, 195, 60);
+	try {Thread.sleep(2000);}catch(Exception e){}
+	
+	c.setColor(stars);
+	c.drawString("Whatever you say... I trust you.", 295, 230);
+	try {Thread.sleep(1500); }catch(Exception e){}
+	c.setColor(lightBrown);
+	c.fillRect(292, 200, 180, 60);
 	
     }
     public void anim() {
