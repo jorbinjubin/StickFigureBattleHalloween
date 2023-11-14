@@ -18,7 +18,10 @@ public class Stickman1 extends Thread {
     public Stickman1(Console con) {
 	c = con;
     }
-
+    public void delay(int d) {
+	try {Thread.sleep(d);
+	}catch(Exception e){}
+    }
     public void drawStickmanBackwards(int x, int y) {
 	// Stickman head
 	c.setColor(Color.black);
@@ -273,6 +276,8 @@ public class Stickman1 extends Thread {
     }
 
     public void anim1() {
+	Font font = new Font("Times New Roman", 0, 24);
+	c.setFont(font);
 	for (int i = 0; i < 175; i++) {
 	    dSm(2, 270, -150 + 2 * i);
 	}
@@ -285,13 +290,184 @@ public class Stickman1 extends Thread {
 	}
 	clearSF(2, 150, 200);
 	drawStickmanBackwards(240, 200);
+	Color bg = new Color(208, 66, 14);
+	try {
+	    Thread.sleep(11500);
+	} catch (Exception e) {
+	}
+	c.setColor(Color.yellow);
+	c.drawString("...", 270, 210);
+	try {Thread.sleep(1000);
+	}catch(Exception e){}
+	c.setColor(bg);
+	//c.setColor(Color.white);
+	c.fillRect(250, 200, 35, 18);
+	try {Thread.sleep(1000);
+	}catch(Exception e){}
+	c.setColor(Color.yellow);
+	c.drawString("ok noob", 270, 210);
+	try {Thread.sleep(1000);
+	}catch(Exception e){}
+	c.setColor(bg);
+	//c.setColor(Color.white);
+	c.fillRect(250, 200, 80, 18);
+	
+	try {Thread.sleep(1500);
+	}catch(Exception e){}
+	c.setColor(Color.black);
+	for(int i = 0; i < 5; i++) {
+	    c.setColor(Color.black);
+	    c.drawLine(240-30, 200 +48 + i, 240 +30, 200+52 + i);
+	    c.setColor(bg);
+	    c.drawLine(270, 252 + i, 310, 252 + i);
+	       
+	}
+	for(int i = 0; i < 3; i++) {
+	    c.setColor(Color.red);
+	    c.drawLine(310, 252 + i, 450, 232 + i);
+	}
+	delay(500);
+	c.setColor(bg);
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(240-30, 200 +48 + i, 240 +30, 200+52 + i);
+	    c.setColor(bg);
+	    c.drawLine(270, 252 + i, 310, 252 + i);
+	}
+	c.setColor(Color.black);
+	c.fillOval(240 - 50, 200, 50, 50);
+	c.setColor(Color.white);
+	c.fillOval(240 - 45, 5 + 200, 40, 40);
+	c.setColor(wizardHat);
+	int[] hatX = {240 + 10, 240 + 10, 240 - 10, 240 - 30, 240 - 45, 240 - 60, 240 - 60};
+	int[] hatY = {200 + 5, 200 - 15, 200 - 15, 200 - 65, 200 - 15, 200 - 15, 200 + 5};
+	c.fillPolygon(hatX, hatY, hatX.length);
+	c.setColor(stars);
+	c.fillOval(240 - 5, 200 - 5, 4, 4);
+	c.fillOval(240 - 17, 200 - 3, 4, 4);
+	c.fillOval(240 - 23, 200 - 3, 4, 4);
+	c.fillOval(240 - 20, 200 - 30, 4, 4);
+	c.fillOval(240 - 23, 200 - 37, 4, 4);
+	c.fillOval(240 - 23, 200 - 27, 4, 4);
+	c.fillOval(240 - 28, 200 - 14, 4, 4);
+	c.fillOval(240 - 23, 200 - 37, 4, 4);
+	c.setColor(bg);
+	for(int i = 0; i < 3; i++) {
+	
+	    c.drawLine(310, 252 + i, 450, 232 + i);
+	}
+	delay(3000);
+	c.setColor(Color.yellow);
+	c.drawString("you asked for it", 270, 210);
+	try {Thread.sleep(1000);
+	}catch(Exception e){}
+	c.setColor(bg);
+	//c.setColor(Color.white);
+	c.fillRect(250, 200, 16*12, 18);
+	delay(500);
     }
-
-    public void anim2() {}
-
-    // public void anim3() {
-
-    //}
+    
+    //draws the stickman walking
+    public void drawWalking(int x, int y) {
+	c.setColor(Color.black);
+	c.fillOval(x - 50, y, 50, 50);
+	c.setColor(Color.white);
+	c.fillOval(x - 45, 5 + y, 40, 40);
+	Color hat = wizardHat; c.setColor(hat);
+	int[] hatX = {x + 10, x + 10, x - 10, x - 30, x - 45, x - 60, x - 60};
+	int[] hatY = {y + 5, y - 15, y - 15, y - 65, y - 15, y - 15, y + 5};
+	c.fillPolygon(hatX, hatY, hatX.length);
+	c.setColor(stars);
+	c.fillOval(x - 5, y - 5, 4, 4);
+	c.fillOval(x - 17, y - 3, 4, 4);
+	c.fillOval(x - 23, y - 3, 4, 4);
+	c.fillOval(x - 20, y - 30, 4, 4);
+	c.fillOval(x - 23, y - 37, 4, 4);
+	c.fillOval(x - 23, y - 27, 4, 4);
+	c.fillOval(x - 28, y - 14, 4, 4);
+	c.fillOval(x - 23, y - 37, 4, 4);
+	c.setColor(Color.black);
+	//arms
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x - 25 + i, y + 50, x - 10 + i, y + 90);
+	    c.drawLine(x - 25 + i, y + 50, x - 40 + i, y + 90);
+	}
+	//body
+	for (int i = 0; i < 5; i++) {
+	    c.drawLine(x -25 + i, y + 48, x - 25 + i, y + 100);
+	}
+	//legs
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x - 25 + i, y + 100, x  - 50 + i, y + 150);
+	    c.drawLine(x - 25 + i, y + 100, x + i, y + 150);
+	}
+    }
+    
+    //draws the other walking frame
+    public void drawWalking(int x, int y, boolean a) {
+	c.setColor(Color.black);
+	c.fillOval(x - 50, y, 50, 50);
+	c.setColor(Color.white);
+	c.fillOval(x - 45, 5 + y, 40, 40);
+	Color hat = wizardHat; c.setColor(hat);
+	int[] hatX = {x + 10, x + 10, x - 10, x - 30, x - 45, x - 60, x - 60};
+	int[] hatY = {y + 5, y - 15, y - 15, y - 65, y - 15, y - 15, y + 5};
+	c.fillPolygon(hatX, hatY, hatX.length);
+	c.setColor(stars);
+	c.fillOval(x - 5, y - 5, 4, 4);
+	c.fillOval(x - 17, y - 3, 4, 4);
+	c.fillOval(x - 23, y - 3, 4, 4);
+	c.fillOval(x - 20, y - 30, 4, 4);
+	c.fillOval(x - 23, y - 37, 4, 4);
+	c.fillOval(x - 23, y - 27, 4, 4);
+	c.fillOval(x - 28, y - 14, 4, 4);
+	c.fillOval(x - 23, y - 37, 4, 4);
+	c.setColor(Color.black);
+	//arms
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x - 25 + i, y + 50, x - 10 + i, y + 90);
+	    c.drawLine(x - 25 + i, y + 50, x - 40 + i, y + 90);
+	}
+	//body
+	for (int i = 0; i < 5; i++) {
+	    c.drawLine(x -25 + i, y + 48, x - 25 + i, y + 100);
+	}
+	//legs
+	for(int i = 0; i < 5; i++) {
+	    c.drawLine(x - 25 + i, y + 100, x  - 25 + i, y + 150);
+	    c.drawLine(x - 25 + i, y + 100, x +i, y + 150);
+	}
+    }
+    //clears the area around the stickman for the next scene
+    public void clearWalking(int x, int y) {
+	c.setColor(new Color(66, 29, 25));
+	c.fillRect(x - 60, y - 70, 80, 221);
+    }
+    
+    //draws and erases the stickman
+    public void drawLoop(int x, int y) {
+	drawWalking(x, y);
+	try {Thread.sleep(150);
+	} catch (Exception e) {
+	}
+	clearWalking(x, y);
+	drawWalking(x, y, true);
+	try {Thread.sleep(150);
+	} catch (Exception e) {
+	}
+	clearWalking(x, y);
+    }
+    
+    //second animation phase
+    public void anim2() {
+	for(int i = 0; i < 43; i++) {
+	    drawLoop(660 - i * 3, 249);
+	    try {Thread.sleep(50);
+	    } catch (Exception e) {
+	    }
+	}
+	drawWalking(660-42*3, 249);
+	
+    }
     public void anim() {
 	if (MyCreation.scene == 0) {
 	    drawStickmanSilhouette(280, 80);
@@ -299,8 +475,11 @@ public class Stickman1 extends Thread {
 	if (MyCreation.scene == 1) {
 	    anim1();
 	}
+	if (MyCreation.scene == 2) {
+	    anim2();
+	}
     }
-
+    
     public void run() {
 	// drawStickmanSilhouette(280, 80);
 	anim();

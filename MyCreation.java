@@ -151,21 +151,35 @@ public class MyCreation
 	c = new Console ("Stick Figure Battle");
     }
 
-
+    public void bubbles() {
+	Bubbles bub = new Bubbles(c);
+	bub.start();   
+    }
+    
     public void sm1 () {
 	Stickman1 sm = new Stickman1 (c);
 	sm.start ();
     } 
+    
     public void sm2() {
 	Stickman2 sm2 = new Stickman2(c);
 	Thread sm2_t = new Thread(sm2);
 	sm2_t.start();
     }
-    public void bubbles() {
-	Bubbles bub = new Bubbles(c);
-	bub.start();   
+    
+    public void sm1_1() {
+	Stickman1 sm_1 = new Stickman1(c);
+	sm_1.start();
     }
-
+    public void sm2_1() {
+	Stickman2 sm2_2 = new Stickman2(c);
+	Thread sm2_1_t = new Thread(sm2_2);
+	sm2_1_t.start();
+    }
+    public void transition() {
+	Transition t = new Transition(c);
+	t.run();
+    }
     public static void main (String[] args)
     {
 	MyCreation z = new MyCreation ();
@@ -190,5 +204,7 @@ public class MyCreation
 	z.bubbles();
 	z.bat();
 	z.spider();
+	z.sm1_1();
+	z.sm2_1();
     }
 }

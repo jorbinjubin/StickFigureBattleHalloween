@@ -48,10 +48,10 @@ import java.lang.*;
 	try {Thread.sleep(100);} catch (Exception e) {}
 	c.setFont(f2);
 	c.setColor(moon1);
-	c.drawString("B", 415, 350);
+	c.drawString("T", 415, 350);
 	c.setFont(f1);
 	c.setColor(moon2);
-	c.drawString("attle", 480, 350);
+	c.drawString("hings", 480, 350);
 	try {Thread.sleep(100);} catch (Exception e) {}
 	c.setFont(f3);
 	c.setColor(moon1);
