@@ -17,6 +17,7 @@ public class Spider extends Thread {
 
     public void spiderCrawl (int x, int y, boolean original, int scene) {
 	//x = 502, y=110
+	    synchronized(c) {
 	    if (scene == 0) {
 		c.setColor(orangeBg); 
 		c.fillRect(x+13, -102+(int)(2*y), x-498, 20);
@@ -70,10 +71,12 @@ public class Spider extends Thread {
 	    else if(scene == 2) { c.setColor(darkBrown); }
 	    c.fillOval(x+6, y+10, 5, 5);
 	    c.fillOval(x+20, y+10, 5, 5);
+	    }
     }
     
     public void drawSpider (int x, int y, boolean original) {
 	//x = 502, y=110
+	    synchronized(c) {
 	    if(original) {
 		c.setColor(spider);
 	    }
@@ -117,6 +120,7 @@ public class Spider extends Thread {
 	    c.setColor(orangeBg);
 	    c.fillOval(x+6, y+10, 5, 5);
 	    c.fillOval(x+20, y+10, 5, 5);
+	    }
     }
 
 

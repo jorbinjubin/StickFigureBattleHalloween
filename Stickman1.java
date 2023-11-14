@@ -23,6 +23,7 @@ public class Stickman1 extends Thread {
 	}catch(Exception e){}
     }
     public void drawStickmanBackwards(int x, int y) {
+	synchronized (c) {
 	// Stickman head
 	c.setColor(Color.black);
 	c.fillOval(x - 50, y, 50, 50);
@@ -72,9 +73,11 @@ public class Stickman1 extends Thread {
 	c.fillOval(x - 23, y - 27, 4, 4);
 	c.fillOval(x - 28, y - 14, 4, 4);
 	c.fillOval(x - 23, y - 37, 4, 4);
+	}
     }
 
     public void drawStickman(int x, int y) {
+	synchronized(c) {
 	// Stickman head
 	c.setColor(Color.black);
 	c.fillOval(x, y, 50, 50);
@@ -124,9 +127,11 @@ public class Stickman1 extends Thread {
 	c.fillOval(x + 23, y - 27, 4, 4);
 	c.fillOval(x + 28, y - 14, 4, 4);
 	c.fillOval(x + 23, y - 37, 4, 4);
+	}
     }
 
     public void drawStickmanSilhouette(int x, int y) {
+	synchronized(c) {
 	// Broom
 	c.setColor(Color.black);
 	c.fillRoundRect(x - 50, y + 99, 160, 5, 4, 4);
@@ -164,11 +169,13 @@ public class Stickman1 extends Thread {
 	int[] hatX = {x - 10, x - 10, x + 10, x + 30, x + 45, x + 60, x + 60};
 	int[] hatY = {y + 5, y - 15, y - 15, y - 65, y - 15, y - 15, y + 5};
 	c.fillPolygon(hatX, hatY, hatX.length);
+	}
     }
 
     
     // Redraws the stickman with the color of the background to clear it out
     public void clearSF(int scene, int x, int y) {
+	synchronized(c) {
 	if (scene == 2) {
 	    c.setColor(new Color(208, 66, 14));
 	}
@@ -209,6 +216,7 @@ public class Stickman1 extends Thread {
 	int[] hatX = {x - 10, x - 10, x + 10, x + 30, x + 45, x + 60, x + 60};
 	int[] hatY = {y + 5, y - 15, y - 15, y - 65, y - 15, y - 15, y + 5};
 	c.fillPolygon(hatX, hatY, hatX.length);
+	}
     }
     
     
@@ -216,6 +224,7 @@ public class Stickman1 extends Thread {
     
     //clears the stickman off the screen, overloaded method
     public void clearSF(int scene, int x, int y, boolean a) {
+	synchronized(c) {
 	if (scene == 2) {
 	    c.setColor(new Color(208, 66, 14));
 	}
@@ -254,6 +263,7 @@ public class Stickman1 extends Thread {
 	int[] hatX = {x + 10, x + 10, x - 10, x - 30, x - 45, x - 60, x - 60};
 	int[] hatY = {y + 5, y - 15, y - 15, y - 65, y - 15, y - 15, y + 5};
 	c.fillPolygon(hatX, hatY, hatX.length);
+	}
     }
 
     
@@ -368,6 +378,7 @@ public class Stickman1 extends Thread {
     
     //draws the stickman walking
     public void drawWalking(int x, int y) {
+	synchronized(c) {
 	c.setColor(Color.black);
 	c.fillOval(x - 50, y, 50, 50);
 	c.setColor(Color.white);
@@ -400,10 +411,12 @@ public class Stickman1 extends Thread {
 	    c.drawLine(x - 25 + i, y + 100, x  - 50 + i, y + 150);
 	    c.drawLine(x - 25 + i, y + 100, x + i, y + 150);
 	}
+	}
     }
     
     //draws the other walking frame
     public void drawWalking(int x, int y, boolean a) {
+	synchronized(c) {
 	c.setColor(Color.black);
 	c.fillOval(x - 50, y, 50, 50);
 	c.setColor(Color.white);
@@ -436,11 +449,14 @@ public class Stickman1 extends Thread {
 	    c.drawLine(x - 25 + i, y + 100, x  - 25 + i, y + 150);
 	    c.drawLine(x - 25 + i, y + 100, x +i, y + 150);
 	}
+	}
     }
     //clears the area around the stickman for the next scene
     public void clearWalking(int x, int y) {
+	synchronized(c) {
 	c.setColor(new Color(66, 29, 25));
 	c.fillRect(x - 60, y - 70, 80, 221);
+	}
     }
     
     //draws and erases the stickman

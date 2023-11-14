@@ -40,11 +40,11 @@ public class Bubbles extends Thread {
     }
 
     public void drawBubbles() {
-	for(int y = 0; y<70; y++) {
+	    synchronized(c) {
 	    c.setColor(potion);
-	    bubble1Y -= 3; 
-	    bubble2Y -= 3; 
-	    bubble3Y -= 3; 
+	    bubble1Y -= 1; 
+	    bubble2Y -= 1; 
+	    bubble3Y -= 2; 
 	    bubble4Y -= 3; 
 	    bubble5Y -= 3; 
 	    
@@ -53,16 +53,18 @@ public class Bubbles extends Thread {
 	    c.fillOval(bubble3X, bubble3Y, bubble3Size, bubble3Size);
 	    c.fillOval(bubble4X, bubble4Y, bubble4Size, bubble4Size);
 	    c.fillOval(bubble5X, bubble5Y, bubble5Size, bubble5Size);
-	
-	    try {Thread.sleep(60);} catch (Exception e) {}
-	
+	    }
+    }
+    
+    public void bubbleCover() {
+	    synchronized(c) {
 	    c.setColor(lightBrown);
 	    c.fillOval(bubble1X, bubble1Y, bubble1Size, bubble1Size);
 	    c.fillOval(bubble2X, bubble2Y, bubble2Size, bubble2Size);
 	    c.fillOval(bubble3X, bubble3Y, bubble3Size, bubble3Size);
 	    c.fillOval(bubble4X, bubble4Y, bubble4Size, bubble4Size);
 	    c.fillOval(bubble5X, bubble5Y, bubble5Size, bubble5Size);
-	}
+	    }
     }
     
     public Bubbles(Console con) {
@@ -71,19 +73,24 @@ public class Bubbles extends Thread {
     
     public void run () {
 	generateBubbles();
-	drawBubbles();
-	for(int s = 0; s<100; s++) {
-	    if(bubble1Y <= 110) {
-		generateBubbles();
-		bubble1Y = 310;
-		bubble2Y = 310; 
-		bubble3Y = 310; 
-		bubble4Y = 310; 
-		bubble5Y = 310;
-		try {Thread.sleep(2000);} catch (Exception e) {} 
-		drawBubbles();
-		s++;
+	for(int i = 0; i < 70; i++) {
+	    drawBubbles();
+	    try {Thread.sleep(60);} catch (Exception e) {}
+	    bubbleCover();
+	    
+	    for(int s = 0; s<100; s++) {
+		if(bubble1Y <= 100) {
+		    generateBubbles();
+		    bubble1Y = 310;
+		    bubble2Y = 310; 
+		    bubble3Y = 310; 
+		    bubble4Y = 310; 
+		    bubble5Y = 310;
+		    try {Thread.sleep(2000);} catch (Exception e) {} 
+		    drawBubbles();
+		    s++;
+		}
 	    }
-	}
+	}   
     }
 }

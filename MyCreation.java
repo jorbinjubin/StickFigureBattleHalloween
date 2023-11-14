@@ -6,14 +6,9 @@ import java.awt.*;
  * multiple animated objects at the same time. Bubbles use an overloaded constructor
  * to create bubbles of different sizes and speeds.
  *
- * Thanks to Nicholas Ng for the drawCircle code, my math abilities are
- * nowhere good enough to figure that out. - Justin
+ * Thanks to Nicholas Ng for the drawCircle code
  *
-==========    ||     ||    ||======             ||=====
-    ||        ||     ||    ||                   ||
-    ||        ||=====||    ||====               ||
-    ||        ||     ||    ||                   ||
-    ||        ||     ||    ||======             ||======    onsole is 640 by 500 i dont wanna make the rest of the big letters lmfao
+  The console is 640 by 500
 
 
  * @author Justin Jiang, Fei Wang
@@ -150,6 +145,32 @@ public class MyCreation
 	// creates a new window and gives window a title
 	c = new Console ("Stick Figure Battle");
     }
+    
+    public void myCreation() {
+	background ();
+	splash ();
+	sm1 ();
+	bat ();
+	spider ();
+	c.getChar ();
+	scene++;
+	
+	c.clear();
+	background ();
+	ghost ();
+	sm1();
+	sm2();
+	c.getChar ();
+	
+	scene++;
+	c.clear();
+	background ();
+	bubbles();
+	bat();
+	spider();
+	sm1_1();
+	sm2_1();
+    }
 
     public void bubbles() {
 	Bubbles bub = new Bubbles(c);
@@ -180,31 +201,8 @@ public class MyCreation
 	Transition t = new Transition(c);
 	t.run();
     }
-    public static void main (String[] args)
-    {
-	MyCreation z = new MyCreation ();
-	z.background ();
-	z.splash ();
-	z.sm1 ();
-	c.getChar ();
-	z.bat ();
-	z.spider ();
-	scene++;
-	
-	c.clear();
-	z.background ();
-	z.ghost ();
-	z.sm1();
-	z.sm2();
-	
-	c.getChar ();
-	scene++;
-	c.clear();
-	z.background ();
-	z.bubbles();
-	z.bat();
-	z.spider();
-	z.sm1_1();
-	z.sm2_1();
+    public static void main (String[] args) {
+	MyCreation m = new MyCreation(); 
+	m.myCreation();
     }
 }

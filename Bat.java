@@ -17,6 +17,7 @@ public class Bat extends Thread {
     private Color wingColor; 
     
     public void drawBat (int x, int y, boolean original, int scene) { 
+	    synchronized(c) {
 	    if(original) {
 		c.setColor(bat);
 	    }
@@ -60,7 +61,8 @@ public class Bat extends Thread {
 	    c.drawLine(x, y-1, x-20, y-16);
 	    c.drawLine(x-20, y-11, x-31, y-5);
 	    c.drawLine(x+17, y-1, x+40, y-16);
-	    c.drawLine(x+40, y-11, x+51, y-5);   
+	    c.drawLine(x+40, y-11, x+51, y-5); 
+	    }  
     } 
 
     public Bat (Console con){
